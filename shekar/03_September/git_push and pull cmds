@@ -1,0 +1,310 @@
+chandrasekar@client50:~$ ls
+
+chandrasekar@client50:~$ cd training-ruby/
+chandrasekar@client50:~/training-ruby$ ls
+lakshmi  LICENSE  README.md  shekar  shree  vignesh
+chandrasekar@client50:~/training-ruby$ cd shekar/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+
+chandrasekar@client50:~$ ls
+
+chandrasekar@client50:~$ cd training-ruby/
+chandrasekar@client50:~/training-ruby$ ls
+
+chandrasekar@client50:~/training-ruby$ cd shekar/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+
+chandrasekar@client50:~/training-ruby/shekar$ git add 02-September/
+
+chandrasekar@client50:~/training-ruby/shekar$ git commit -m "Array manipulation"
+------------------------------------------------------
+chandrasekar@client50:~$ ls
+Chandra_test   Documents         Music     Templates      Videos
+Chan_Programs  Downloads         Pictures  test
+Desktop        examples.desktop  Public    training-ruby
+chandrasekar@client50:~$ cd training-ruby/
+chandrasekar@client50:~/training-ruby$ ls
+lakshmi  LICENSE  README.md  shekar  shree  vignesh
+chandrasekar@client50:~/training-ruby$ cd shekar/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	02-September/chandrasekar@client50:~/Chan_Programs$ cd ~
+chandrasekar@client50:~$ ls
+Chandra_test   Documents         Music     Templates      Videos
+Chan_Programs  Downloads         Pictures  test
+Desktop        examples.desktop  Public    training-ruby
+chandrasekar@client50:~$ cd training-ruby/
+chandrasekar@client50:~/training-ruby$ ls
+lakshmi  LICENSE  README.md  shekar  shree  vignesh
+chandrasekar@client50:~/training-ruby$ cd shekar/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	02-September/
+nothing added to commit but untracked files present (use "git add" to track)
+chandrasekar@client50:~/training-ruby/shekar$ git add 02-September/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   02-September/Binary_search.rb
+#	new file:   02-September/Number_search.rb
+#	new file:   02-September/sample.rb
+#
+chandrasekar@client50:~/training-ruby/shekar$ git commit -m "Array manipulation"[master a4fdc00] Array manipulation
+ 3 files changed, 63 insertions(+)
+ create mode 100644 shekar/02-September/Binary_search.rb
+ create mode 100644 shekar/02-September/Number_search.rb
+ create mode 100644 shekar/02-September/sample.rb
+chandrasekar@client50:~/training-ruby/shekar$ git pull
+remote: Counting objects: 14, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 3), reused 11 (delta 2)
+Unpacking objects: 100% (12/12), done.
+From github.com:senthilnayagam/training-ruby
+   d830bfc..46eea84  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ lakshmi/2nd_sept/Integral.rb  |   10 ++++++++++
+ lakshmi/2nd_sept/operators.rb |    5 +++++
+ lakshmi/2nd_sept/sample2.rb   |    6 ++++++
+ lakshmi/2nd_sept/sample4.rb   |    2 ++
+ 4 files changed, 23 insertions(+)
+ create mode 100644 lakshmi/2nd_sept/Integral.rb
+ create mode 100644 lakshmi/2nd_sept/operators.rb
+ create mode 100644 lakshmi/2nd_sept/sample2.rb
+ create mode 100644 lakshmi/2nd_sept/sample4.rb
+ create mode 100644 senthil/.gitkeep
+chandrasekar@client50:~/training-ruby/shekar$ git push
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.36 KiB, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To git@github.com:senthilnayagam/training-ruby.git
+   46eea84..70ad8dd  master -> master
+chandrasekar@client50:~/training-ruby/shekar$ 
+
+nothing added to commit but untracked files present (use "git add" to track)
+chandrasekar@client50:~/training-ruby/shekar$ git add 02-September/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   02-September/Binary_search.rb
+#	new file:   02-September/Number_search.rbchandrasekar@client50:~/Chan_Programs$ cd ~
+chandrasekar@client50:~$ ls
+Chandra_test   Documents         Music     Templates      Videos
+Chan_Programs  Downloads         Pictures  test
+Desktop        examples.desktop  Public    training-ruby
+chandrasekar@client50:~$ cd training-ruby/
+chandrasekar@client50:~/training-ruby$ ls
+lakshmi  LICENSE  README.md  shekar  shree  vignesh
+chandrasekar@client50:~/training-ruby$ cd shekar/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	02-September/
+nothing added to commit but untracked files present (use "git add" to track)
+chandrasekar@client50:~/training-ruby/shekar$ git add 02-September/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   02-September/Binary_search.rb
+#	new file:   02-September/Number_search.rb
+#	new file:   02-September/sample.rb
+#
+chandrasekar@client50:~/training-ruby/shekar$ git commit -m "Array manipulation"[master a4fdc00] Array manipulation
+ 3 files changed, 63 insertions(+)
+ create mode 100644 shekar/02-September/Binary_search.rb
+ create mode 100644 shekar/02-September/Number_search.rb
+ create mode 100644 shekar/02-September/sample.rb
+chandrasekar@client50:~/training-ruby/shekar$ git pull
+remote: Counting objects: 14, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 3), reused 11 (delta 2)
+Unpacking objects: 100% (12/12), done.
+From github.com:senthilnayagam/training-ruby
+   d830bfc..46eea84  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ lakshmi/2nd_sept/Integral.rb  |   10 ++++++++++
+ lakshmi/2nd_sept/operators.rb |    5 +++++
+ lakshmi/2nd_sept/sample2.rb   |    6 ++++++
+ lakshmi/2nd_sept/sample4.rb   |    2 ++
+ 4 files changed, 23 insertions(+)
+ create mode 100644 lakshmi/2nd_sept/Integral.rb
+ create mode 100644 lakshmi/2nd_sept/operators.rb
+ create mode 100644 lakshmi/2nd_sept/sample2.rb
+ create mode 100644 lakshmi/2nd_sept/sample4.rb
+ create mode 100644 senthil/.gitkeep
+chandrasekar@client50:~/training-ruby/shekar$ git push
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.36 KiB, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To git@github.com:senthilnayagam/training-ruby.git
+   46eea84..70ad8dd  master -> master
+chandrasekar@client50:~/training-ruby/shekar$ 
+
+#	new file:   02-September/sample.rb
+#
+chandrasekar@client50:~/training-ruby/shekar$ git commit -m "Array manipulation"[master a4fdc00] Array manipulation
+ 3 files changed, 63 insertions(+)
+ create mode 100644 shekar/02-September/Binary_search.rb
+ create mode 100644 shekar/02-September/Number_search.rb
+ create mode 100644 shekar/02-September/sample.rb
+chandrasekar@client50:~/training-ruby/shekar$ git pull
+remote: Counting objects: 14, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 3), reused 11 (delta 2)
+Unpacking objects: 100% (12/12), done.
+From github.com:senthilnayagam/training-ruby
+   d830bfc..46eea84  master     -> origin/master
+Merge made by the 'recursive' strategy.chandrasekar@client50:~/Chan_Programs$ cd ~
+chandrasekar@client50:~$ ls
+Chandra_test   Documents         Music     Templates      Videos
+Chan_Programs  Downloads         Pictures  test
+Desktop        examples.desktop  Public    training-ruby
+chandrasekar@client50:~$ cd training-ruby/
+chandrasekar@client50:~/training-ruby$ ls
+lakshmi  LICENSE  README.md  shekar  shree  vignesh
+chandrasekar@client50:~/training-ruby$ cd shekar/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	02-September/
+nothing added to commit but untracked files present (use "git add" to track)
+chandrasekar@client50:~/training-ruby/shekar$ git add 02-September/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   02-September/Binary_search.rb
+#	new file:   02-September/Number_search.rb
+#	new file:   02-September/sample.rb
+#
+chandrasekar@client50:~/training-ruby/shekar$ git commit -m "Array manipulation"[master a4fdc00] Array manipulation
+ 3 files changed, 63 insertions(+)
+ create mode 100644 shekar/02-September/Binary_search.rb
+ create mode 100644 shekar/02-September/Number_search.rb
+ create mode 100644 shekar/02-September/sample.rb
+chandrasekar@client50:~/training-ruby/shekar$ git pull
+remote: Counting objects: 14, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 3), reused 11 (delta 2)
+Unpacking objects: 100% (12/12), done.
+From github.com:senthilnayagam/training-ruby
+   d830bfc..46eea84  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ lakshmi/2nd_sept/Integral.rb  |   10 ++++++++++
+ lakshmi/2nd_sept/operators.rb |    5 +++++
+ lakshmi/2nd_sept/sample2.rb   |    6 ++++++
+ lakshmi/2nd_sept/sample4.rb   |    2 ++
+ 4 files changed, 23 insertions(+)
+ create mode 100644 lakshmi/2nd_sept/Integral.rb
+ create mode 100644 lakshmi/2nd_sept/operators.rb
+ create mode 100644 lakshmi/2nd_sept/sample2.rb
+ create mode 100644 lakshmi/2nd_sept/sample4.rb
+ create mode 100644 senthil/.gitkeep
+chandrasekar@client50:~/training-ruby/shekar$ git push
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.36 KiB, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To git@github.com:senthilnayagam/training-ruby.git
+   46eea84..70ad8dd  master -> master
+chandrasekar@client50:~/training-ruby/shekar$ 
+
+ lakshmi/2nd_sept/Inchandrasekar@client50:~/Chan_Programs$ cd ~
+chandrasekar@client50:~$ ls
+Chandra_test   Documents         Music     Templates      Videos
+Chan_Programs  Downloads         Pictures  test
+Desktop        examples.desktop  Public    training-ruby
+chandrasekar@client50:~$ cd training-ruby/
+chandrasekar@client50:~/training-ruby$ ls
+lakshmi  LICENSE  README.md  shekar  shree  vignesh
+chandrasekar@client50:~/training-ruby$ cd shekar/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	02-September/
+nothing added to commit but untracked files present (use "git add" to track)
+chandrasekar@client50:~/training-ruby/shekar$ git add 02-September/
+chandrasekar@client50:~/training-ruby/shekar$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   02-September/Binary_search.rb
+#	new file:   02-September/Number_search.rb
+#	new file:   02-September/sample.rb
+#
+chandrasekar@client50:~/training-ruby/shekar$ git commit -m "Array manipulation"[master a4fdc00] Array manipulation
+ 3 files changed, 63 insertions(+)
+ create mode 100644 shekar/02-September/Binary_search.rb
+ create mode 100644 shekar/02-September/Number_search.rb
+ create mode 100644 shekar/02-September/sample.rb
+chandrasekar@client50:~/training-ruby/shekar$ git pull
+remote: Counting objects: 14, done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 3), reused 11 (delta 2)
+Unpacking objects: 100% (12/12), done.
+From github.com:senthilnayagam/training-ruby
+   d830bfc..46eea84  master     -> origin/master
+Merge made by the 'recursive' strategy.
+ lakshmi/2nd_sept/Integral.rb  |   10 ++++++++++
+ lakshmi/2nd_sept/operators.rb |    5 +++++
+ lakshmi/2nd_sept/sample2.rb   |    6 ++++++
+ lakshmi/2nd_sept/sample4.rb   |    2 ++
+ 4 files changed, 23 insertions(+)
+ create mode 100644 lakshmi/2nd_sept/Integral.rb
+ create mode 100644 lakshmi/2nd_sept/operators.rb
+ create mode 100644 lakshmi/2nd_sept/sample2.rb
+ create mode 100644 lakshmi/2nd_sept/sample4.rb
+ create mode 100644 senthil/.gitkeep
+chandrasekar@client50:~/training-ruby/shekar$ git push
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.36 KiB, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To git@github.com:senthilnayagam/training-ruby.git
+   46eea84..70ad8dd  master -> master
+chandrasekar@client50:~/training-ruby/shekar$ 
+tegral.rb  |   10 ++++++++++
+ lakshmi/2nd_sept/operators.rb |    5 +++++
+ lakshmi/2nd_sept/sample2.rb   |    6 ++++++
+ lakshmi/2nd_sept/sample4.rb   |    2 ++
+ 4 files changed, 23 insertions(+)
+ create mode 100644 lakshmi/2nd_sept/Integral.rb
+ create mode 100644 lakshmi/2nd_sept/operators.rb
+ create mode 100644 lakshmi/2nd_sept/sample2.rb
+ create mode 100644 lakshmi/2nd_sept/sample4.rb
+ create mode 100644 senthil/.gitkeep
+chandrasekar@client50:~/training-ruby/shekar$ git push
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 1.36 KiB, done.
+Total 9 (delta 2), reused 0 (delta 0)
+To git@github.com:senthilnayagam/training-ruby.git
+   46eea84..70ad8dd  master -> master
+chandrasekar@client50:~/training-ruby/shekar$ 
+
