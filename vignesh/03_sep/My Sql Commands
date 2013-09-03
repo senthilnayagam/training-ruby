@@ -1,0 +1,99 @@
+anand@client50:~$ mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 30
+Server version: 5.5.31-MariaDB-1~precise-log mariadb.org binary distribution
+
+Copyright (c) 2000, 2013, Oracle, Monty Program Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+4 rows in set (0.01 sec)
+
+
+
+MariaDB [(none)]> use test;
+Database changed
+
+
+MariaDB [test]> create table employee
+    -> (id int(5),
+    -> name varchar(10),
+    -> dept varchar(5),
+    -> age int(3),
+    -> salary int(5),
+    -> location varchar(10));
+Query OK, 0 rows affected (0.35 sec)
+
+
+
+MariaDB [test]> insert into employee values
+    -> (327,'Sekar','CSE',24,10000,'Chennai');
+Query OK, 1 row affected (0.05 sec)
+
+MariaDB [test]> select * from employee;
++------+-------+------+------+--------+----------+
+| id   | name  | dept | age  | salary | location |
++------+-------+------+------+--------+----------+
+|  327 | Sekar | CSE  |   24 |  10000 | Chennai  |
++------+-------+------+------+--------+----------+
+1 row in set (0.00 sec)
+
+
+
+
+MariaDB [test]> insert into employee values
+    -> (329,'Raji','CSE',24,10000,'Chennai');
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [test]> insert into employee values
+    -> (330,'Vignesh','CSE',21,10000,'Chennai');
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [test]> select * from employee;
++------+----------+------+------+--------+----------+
+| id   | name     | dept | age  | salary | location |
++------+----------+------+------+--------+----------+
+|  327 | Sekar    | CSE  |   24 |  10000 | Chennai  |
+|  328 | Marisree | CSE  |   24 |  10000 | Chennai  |
+|  329 | Raji     | CSE  |   24 |  10000 | Chennai  |
+|  330 | Vignesh  | CSE  |   21 |  10000 | Chennai  |
++------+----------+------+------+--------+----------+
+4 rows in set (0.00 sec)
+
+
+
+
+MariaDB [test]> update employee set age=21 where id=328;
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+MariaDB [test]> select * from employee;
++------+----------+------+------+--------+----------+
+| id   | name     | dept | age  | salary | location |
++------+----------+------+------+--------+----------+
+|  327 | Sekar    | CSE  |   24 |  10000 | Chennai  |
+|  328 | Marisree | CSE  |   21 |  10000 | Chennai  |
+|  329 | Raji     | CSE  |   24 |  10000 | Chennai  |
+|  330 | Vignesh  | CSE  |   21 |  10000 | Chennai  |
++------+----------+------+------+--------+----------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
