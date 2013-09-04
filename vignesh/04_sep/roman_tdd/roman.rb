@@ -11,6 +11,8 @@ elsif(number==2)
 return 'II'
 elsif(number==3)
 return 'III'
+elsif(number==4)
+return 'IV'
 
 end
 
