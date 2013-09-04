@@ -1,0 +1,37 @@
+database mysql:
+
+created database called test1:
+
+1.commands used are:
+
+mysql -u root -p
+create database test1
+
+2.then to show the database:
+commands used is:
+
+show databases;
+
+3. to use the database test given command
+ use test1
+
+4.
+then created employee2 table with eid as integer ,ename varchar(20) ,esalary as float,ehiredate as date
+
+commands used :
+create table employee2 (eid integer,ename varchar(20), esalary float,ehiredate date);
+
+5. then inserted the values inside the table using insert sattements
+insert into employee2 values(331,'Andrew',1000.00,'2012-09-02');
+
+6.
+check for the description of the table using:
+desc employee2;
+
+7. check for the values inside the table using select statements
+
+select * from employee2;
+
+
+
+
