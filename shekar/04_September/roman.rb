@@ -22,6 +22,8 @@ when 9
  return "IX"
 when 10
  return "X"
+when 11
+ return "XI"
 else
  return "None"
 end
