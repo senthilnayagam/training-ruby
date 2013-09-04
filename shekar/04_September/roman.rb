@@ -1,20 +1,21 @@
 class Roman
 
 def self.convert(n)
-if n==1
+case n
+when 1
  return "I"
-elsif n==2
+when 2
  return "II"
-elsif n==3
+when 3
  return "III"
-elsif n==4
+when 4
  return "IV"
-elsif n==5
+when 5
  return "V"
-elsif n==6
+when 6
  return "VI"
-else
- return "None"
+when 7
+ return "VII"
 end
 end
 
