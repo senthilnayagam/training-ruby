@@ -11,6 +11,7 @@ class TestRoman < Test::Unit::TestCase
     assert_equal('V', Roman.convert(5) )
     assert_equal('VI', Roman.convert(6))
     assert_equal('VII', Roman.convert(7))
+    assert_equal('VIII', Roman.convert(8))
   end
 
 
