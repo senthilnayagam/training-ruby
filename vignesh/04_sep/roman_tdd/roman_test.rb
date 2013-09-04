@@ -13,6 +13,7 @@ class TestRoman < Test::Unit::TestCase
     assert_equal('VII', Roman.convert(7))
     assert_equal('VIII', Roman.convert(8))
     assert_equal('IX', Roman.convert(9))
+    assert_equal('X', Roman.convert(10))
   end
 
 
