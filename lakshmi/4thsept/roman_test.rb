@@ -4,8 +4,8 @@ require "./roman"
 class TestRoman < Test::Unit::TestCase
  
   def test_conversion
-    assert_equal('I', Roman.convert(1) )
-    assert_equal('II', Roman.convert(2) )
+    assert_equal('I',Roman.convert(1))
+    assert_equal('II',Roman.convert(2))
   end
 
 
