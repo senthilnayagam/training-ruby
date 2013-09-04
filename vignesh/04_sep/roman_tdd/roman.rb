@@ -17,6 +17,8 @@ elsif(number==5)
 return 'V'
 elsif(number==6)
 return 'VI'
+elsif(number==7)
+return 'VII'
 
 end
 
