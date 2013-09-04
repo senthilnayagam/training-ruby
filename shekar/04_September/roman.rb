@@ -18,6 +18,12 @@ when 7
  return "VII"
 when 8
  return "VIII"
+when 9
+ return "IX"
+when 10
+ return "X"
+else
+ return "None"
 end
 end
 
