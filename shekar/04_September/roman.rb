@@ -9,8 +9,12 @@ elsif n==3
  return "III"
 elsif n==4
  return "IV"
-else
+elsif n==5
  return "V"
+elsif n==6
+ return "VI"
+else
+ return "None"
 end
 end
 
