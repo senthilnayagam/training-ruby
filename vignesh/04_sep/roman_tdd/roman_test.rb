@@ -8,6 +8,7 @@ class TestRoman < Test::Unit::TestCase
     assert_equal('II', Roman.convert(2) )
     assert_equal('III', Roman.convert(3) )
     assert_equal('IV', Roman.convert(4) )
+
   end
 
 
