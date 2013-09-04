@@ -7,8 +7,14 @@ elsif n==2
  return "II"
 elsif n==3
  return "III"
-else
+elsif n==4
  return "IV"
+elsif n==5
+ return "V"
+elsif n==6
+ return "VI"
+else
+ return "None"
 end
 end
 
