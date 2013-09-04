@@ -1,8 +1,10 @@
 class Roman
-
 def self.convert(number)
-'I'
-
+if(number==1)
+  'I'
+else
+  'II'
+end
 end
 end
 
