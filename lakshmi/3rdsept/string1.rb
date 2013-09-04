@@ -1,5 +1,7 @@
-a="hello world"
+
+a = $stdin.read
 b=a.length
+print "\n"
 for i in 0..b+1
 print "*"
 end
@@ -9,4 +11,7 @@ for i in 0..b+1
 print "*"
 end
 print "\n"
+
+
+
 
