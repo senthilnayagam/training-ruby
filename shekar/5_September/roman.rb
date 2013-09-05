@@ -16,10 +16,10 @@ if num.is_a? Integer
 
 	return thou[th]+hund[h]+ten[t]+unit[u].strip
 	else
-	return "Invalid number\n"
+	return "Invalid number"
 	end
 else
-	return "Invalid data\n"
+	return "Invalid data"
 end
 end
 
