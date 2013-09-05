@@ -20,9 +20,9 @@ class TestRoman < Test::Unit::TestCase
   def test_conversion1
    assert_equal('CLI', Roman.convert(151) )
    assert_equal('Invalid data',Roman.convert('xxx'))
-   #assert_equal('II',Roman.convert(299))
-   #assert_equal('III',Roman.convert(3000))
-   #assert_equal("IV",Roman.convert(004))
+   assert_equal('CCXCIX',Roman.convert(299))
+   assert_equal('MMM',Roman.convert(3000))
+   assert_equal("IV",Roman.convert(004))
   end
 end
 
