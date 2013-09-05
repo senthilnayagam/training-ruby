@@ -19,4 +19,8 @@ class Calc_Test < Test::Unit::TestCase
    assert_equal("2", Calc.mul(4,2))
    assert_equal("5", Calc.smul(25,5))
   end
+  def Calc_pow
+   assert_equal("16", Calc.pow(4,2))
+   assert_equal("1", Calc.pow(5,0))
+  end
 end
