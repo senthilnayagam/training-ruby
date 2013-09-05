@@ -1,0 +1,418 @@
+create table student(
+      rollno integer primary key,
+      name varchar(30),
+      dob date,
+      subject1 integer,
+      subject2 integer,
+      subject3 integer,
+      subject4 integer,
+      subject4 integer,
+      subject5 integer,
+      subject6 integer,
+      total integer,
+      avg float(3,2));
+
+MariaDB [(none)]> create database college
+    -> ;
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| college            |
+| mysql              |
+| performance_schema |
+| sample_db          |
++--------------------+
+5 rows in set (0.00 sec)
+
+MariaDB [(none)]> use college;
+Database changed
+MariaDB [college]> create table student(
+    -> rollno integer primary key,
+    -> name varchar(30),
+    -> dob date,
+    -> subject1 number,
+    -> subject2 number,
+    -> subject3 number,
+    -> subject4 number,
+    -> subject5 number,
+    -> subject6 number,
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'number,
+subject2 number,
+subject3 number,
+subject4 number,
+subject5 number,
+subj' at line 5
+MariaDB [college]> create table student(
+    -> rollno integer primary key,
+    -> name varchar(30),
+    -> dob date,
+    -> subject1 integer,
+    -> subject2 integer,
+    -> subject3 integer,
+    -> subject4 integer,
+    -> subject4 integer,
+    -> subject5 integer,
+    -> subject6 integer,
+    -> total integer,
+    -> avg float(3,2));
+ERROR 1060 (42S21): Duplicate column name 'subject4'
+MariaDB [college]> create table student( rollno integer primary key, name varchar(30), dob date, subject1 integer, subject2 integer, subject3 integer, subject4 integer, subject5 integer, subject6 integer, total integer, avg float(3,2));Query OK, 0 rows affected (0.25 sec)
+
+MariaDB [college]> insert into student values(1,'Chandra sekaran','28-03-1990',82,83,98,80,95,100,0,0);
+Query OK, 1 row affected, 1 warning (0.06 sec)
+
+MariaDB [college]> insert into student values(1,'Kamal hassan','5-11-1954',89,83,99,80,95,100,0,0);
+ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
+MariaDB [college]> insert into student values(2,'Kamal hassan','5-11-1954',89,83,99,80,95,100,0,0);
+Query OK, 1 row affected, 1 warning (0.02 sec)
+
+MariaDB [college]> insert into student values(3,'Kamala ramesh','15-10-1990',89,83,99,80,82,91,0,0);
+Query OK, 1 row affected, 1 warning (0.04 sec)
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 0000-00-00 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 0000-00-00 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 0000-00-00 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+3 rows in set (0.03 sec)
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 0000-00-00 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 0000-00-00 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 0000-00-00 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+3 rows in set (0.00 sec)
+
+MariaDB [college]> update student set dob='1990-03-1990' where rollno=1;
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+Rows matched: 1  Changed: 0  Warnings: 1
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 0000-00-00 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 0000-00-00 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 0000-00-00 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+3 rows in set (0.00 sec)
+
+MariaDB [college]> update student set dob='1990-03-28' where rollno=1;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 0000-00-00 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 0000-00-00 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+3 rows in set (0.00 sec)
+
+MariaDB [college]> update student set dob='1991-05-03' where rollno=2;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 0000-00-00 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+3 rows in set (0.00 sec)
+
+MariaDB [college]> update student set dob='1954-07-05' where rollno=3;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+3 rows in set (0.00 sec)
+
+MariaDB [college]> insert into student values(4,'Ramesh kannan','1989-08-26',80,73,99,80,82,90,0,0);
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
+|      4 | Ramesh kannan   | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+4 rows in set (0.00 sec)
+
+MariaDB [college]> insert into student values(5,'Baskaran','1990-08-12',72,73,80,80,76,90,0,0);
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [college]> select * from student;
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name            | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan    | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh   | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
+|      4 | Ramesh kannan   | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |     0 | 0.00 |
+|      5 | Baskaran        | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |     0 | 0.00 |
++--------+-----------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+5 rows in set (0.00 sec)
+
+MariaDB [college]> insert into student values(6,'Bharathi kannama','1990-08-12',92,73,79,80,72,70,0,0);
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |     0 | 0.00 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |     0 | 0.00 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |     0 | 0.00 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+6 rows in set (0.00 sec)
+
+MariaDB [college]> insert into student values(7,'Tambi durai','1989-05-29',100,73,79,60,72,73,0,0);
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |     0 | 0.00 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |     0 | 0.00 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |     0 | 0.00 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |     0 | 0.00 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+7 rows in set (0.00 sec)
+
+MariaDB [college]> insert into student values(8,'Stefen raj','1989-10-11',81,73,74,60,70,79,0,0);
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |     0 | 0.00 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |     0 | 0.00 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |     0 | 0.00 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |     0 | 0.00 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |     0 | 0.00 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+8 rows in set (0.00 sec)
+
+MariaDB [college]> insert into student values(9,'Uma raju','1989-7-21',91,83,84,60,90,79,0,0);
+Query OK, 1 row affected (0.03 sec)
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |     0 | 0.00 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |     0 | 0.00 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |     0 | 0.00 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |     0 | 0.00 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |     0 | 0.00 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 |     0 | 0.00 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+9 rows in set (0.00 sec)
+
+MariaDB [college]> insert into student values(10,'Lalitha','1989-10-29',100,89,82,90,90,92,0,0);
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |     0 | 0.00 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |     0 | 0.00 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |     0 | 0.00 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |     0 | 0.00 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |     0 | 0.00 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |     0 | 0.00 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |     0 | 0.00 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |     0 | 0.00 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 |     0 | 0.00 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 |     0 | 0.00 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
+MariaDB [college]> update student set total=subject1+subject2+subject3+subject4+subject5+subject6;
+Query OK, 10 rows affected (0.02 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |   538 | 0.00 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |   546 | 0.00 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |   524 | 0.00 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |   504 | 0.00 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |   471 | 0.00 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |   466 | 0.00 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |   457 | 0.00 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |   437 | 0.00 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 |   487 | 0.00 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 |   543 | 0.00 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
+MariaDB [college]> update student set avg=total/6;
+Query OK, 10 rows affected, 10 warnings (0.03 sec)
+Rows matched: 10  Changed: 10  Warnings: 10
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |   538 | 9.99 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |   546 | 9.99 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |   524 | 9.99 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |   504 | 9.99 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |   471 | 9.99 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |   466 | 9.99 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |   457 | 9.99 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |   437 | 9.99 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 |   487 | 9.99 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 |   543 | 9.99 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
+MariaDB [college]> update student set avg=total/600;
+Query OK, 10 rows affected (0.03 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |   538 | 0.90 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |   546 | 0.91 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |   524 | 0.87 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |   504 | 0.84 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |   471 | 0.78 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |   466 | 0.78 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |   457 | 0.76 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |   437 | 0.73 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 |   487 | 0.81 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 |   543 | 0.90 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
+MariaDB [college]> update student set total=total*100;
+Query OK, 10 rows affected (0.03 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 | 53800 | 0.90 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 | 54600 | 0.91 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 | 52400 | 0.87 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 | 50400 | 0.84 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 | 47100 | 0.78 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 | 46600 | 0.78 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 | 45700 | 0.76 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 | 43700 | 0.73 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 | 48700 | 0.81 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 | 54300 | 0.90 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
+MariaDB [college]> alter table student modify avg integer;
+Query OK, 10 rows affected (0.31 sec)              
+Records: 10  Duplicates: 0  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 | 53800 |    1 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 | 54600 |    1 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 | 52400 |    1 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 | 50400 |    1 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 | 47100 |    1 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 | 46600 |    1 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 | 45700 |    1 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 | 43700 |    1 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 | 48700 |    1 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 | 54300 |    1 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
+MariaDB [college]> update student set total=subject1+subject2+subject3+subject4+subject5+subject6;
+Query OK, 10 rows affected (0.03 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |   538 |    1 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |   546 |    1 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |   524 |    1 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |   504 |    1 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |   471 |    1 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |   466 |    1 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |   457 |    1 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |   437 |    1 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 |   487 |    1 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 |   543 |    1 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
+MariaDB [college]> update student set avg=total/6;
+Query OK, 10 rows affected (0.03 sec)
+Rows matched: 10  Changed: 10  Warnings: 0
+
+MariaDB [college]> select * from student;
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+| rollno | name             | dob        | subject1 | subject2 | subject3 | subject4 | subject5 | subject6 | total | avg  |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+|      1 | Chandra sekaran  | 1990-03-28 |       82 |       83 |       98 |       80 |       95 |      100 |   538 |   90 |
+|      2 | Kamal hassan     | 1991-05-03 |       89 |       83 |       99 |       80 |       95 |      100 |   546 |   91 |
+|      3 | Kamala ramesh    | 1954-07-05 |       89 |       83 |       99 |       80 |       82 |       91 |   524 |   87 |
+|      4 | Ramesh kannan    | 1989-08-26 |       80 |       73 |       99 |       80 |       82 |       90 |   504 |   84 |
+|      5 | Baskaran         | 1990-08-12 |       72 |       73 |       80 |       80 |       76 |       90 |   471 |   79 |
+|      6 | Bharathi kannama | 1990-08-12 |       92 |       73 |       79 |       80 |       72 |       70 |   466 |   78 |
+|      7 | Tambi durai      | 1989-05-29 |      100 |       73 |       79 |       60 |       72 |       73 |   457 |   76 |
+|      8 | Stefen raj       | 1989-10-11 |       81 |       73 |       74 |       60 |       70 |       79 |   437 |   73 |
+|      9 | Uma raju         | 1989-07-21 |       91 |       83 |       84 |       60 |       90 |       79 |   487 |   81 |
+|     10 | Lalitha          | 1989-10-29 |      100 |       89 |       82 |       90 |       90 |       92 |   543 |   91 |
++--------+------------------+------------+----------+----------+----------+----------+----------+----------+-------+------+
+10 rows in set (0.00 sec)
+
