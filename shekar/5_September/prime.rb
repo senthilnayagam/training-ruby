@@ -1,7 +1,7 @@
 #Program to check for prime number.
 class Prime
     def check_prime(num)
-        if num.class == "Fixnum"
+        if num.is_a? Integer
 	 c=0
          for i in 1..num
 	 if (num % i) == 0
