@@ -1,0 +1,17 @@
+task 1 ) roman numberals task upto 4000
+
+
+task 2) calculator
+
+addition
+subtraction
+multiplication
+division
+
+seperate methods
+seperate tests
+
+last result should be stored and getter should be set to retrieve it
+
+
+task 3) check if a number is a prime number
