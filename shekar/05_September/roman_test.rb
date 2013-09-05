@@ -2,7 +2,6 @@ require "test/unit"
 require "./roman"
 
 class TestRoman < Test::Unit::TestCase
- 
   def test_conversion
    assert_equal('I', Roman.convert(1) )
    #assert_equal('I',Roman.convert('a'))
@@ -18,7 +17,6 @@ class TestRoman < Test::Unit::TestCase
    assert_equal("XI",Roman.convert(11))
    assert_equal("XII",Roman.convert(12))
   end
-
 end
 
 
