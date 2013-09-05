@@ -14,7 +14,7 @@ mul
 end
 def self.divide(a,b)
 if(b!=0)
-div= "Denominator should not be zero"
+div= "Dnmntr shud not be zero"
 div
 else
 div=a/b
