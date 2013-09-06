@@ -13,6 +13,10 @@ db1.query("insert into test_student values('Ram kumar',22,'C')")
 db1.query("insert into test_student values('Raghavan',22,'B')")
 db1.query("update test_student set grade='B' where sname like 'Ram%'")
 =end
-db1.query("delete from test_student where sname like 'uma'")
+puts "Input student data to be deleted : "
+print "Name  : "
+name=gets
+db1.query("delete from test_student where sname like '#{name}'")
+print "#{name} record deleted."
 
 end
