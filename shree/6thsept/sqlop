@@ -1,0 +1,43 @@
+SQL table creation using RUBY
+CREATION
+DESCRIBE
+INSERT
+ALTER
+
+manishree@client50:~$ cd training-ruby
+manishree@client50:~/training-ruby$ cd shree
+manishree@client50:~/training-ruby/shree$ cd 6thsept
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlcreate.rb
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlins.rb
+sqlins.rb:9:in `query': Column count doesn't match value count at row 1 (Mysql::Error)
+	from sqlins.rb:9:in `<main>'
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlins.rb
+sqlins.rb:8:in `query': Duplicate entry '1' for key 'PRIMARY' (Mysql::Error)
+	from sqlins.rb:8:in `<main>'
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlins.rb
+1 jack team leader
+3 leo team leader
+4 rosy project manager
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlalt.rb
+sqlalt.rb:8:in `query': Unknown column 'rollno' in 'where clause' (Mysql::Error)
+	from sqlalt.rb:8:in `<main>'
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlalt.rb
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlalt.rb
+#<Mysql::Result:0x8bccc8c>
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlalt.rb
+empno int(11) NO PRI  
+Name varchar(25) YES   
+designation varchar(25) YES   
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqldesc.rb
+empno int(11) NO PRI  
+Name varchar(25) YES   
+designation varchar(25) YES   
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlalt.rb
+sqlalt.rb:8:in `query': Unknown column 'no' in 'where clause' (Mysql::Error)
+	from sqlalt.rb:8:in `<main>'
+manishree@client50:~/training-ruby/shree/6thsept$ ruby sqlalt.rb
+1 jack team leader
+3 leo HR
+4 rosy project manager
+manishree@client50:~/training-ruby/shree/6thsept$ 
+

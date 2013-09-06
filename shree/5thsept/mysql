@@ -1,0 +1,69 @@
+MariaDB [(none)]> create database college
+    -> ;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> show database
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'database' at line 1
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| college            |
+| mysql              |
+| performance_schema |
+| sample             |
++--------------------+
+5 rows in set (0.00 sec)
+
+MariaDB [(none)]> use college
+Database changed
+MariaDB [college]> create table student(rollno int primary key,name varchar(20),dob date,sub1 int,sub2 int,sub3 int,sub4 int,sub5 int,sub6 int,avg int);
+Query OK, 0 rows affected (0.24 sec)
+
+MariaDB [college]> alter table student(add total int after sub6);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '(add total int after sub6)' at line 1
+MariaDB [college]> alter table student add total int after sub6;
+Query OK, 0 rows affected (0.29 sec)               
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [college]> show student
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'student' at line 1
+MariaDB [college]> select tabless;
+ERROR 1054 (42S22): Unknown column 'tabless' in 'field list'
+MariaDB [college]> desc student
+    -> ;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| rollno | int(11)     | NO   | PRI | NULL    |       |
+| name   | varchar(20) | YES  |     | NULL    |       |
+| dob    | date        | YES  |     | NULL    |       |
+| sub1   | int(11)     | YES  |     | NULL    |       |
+| sub2   | int(11)     | YES  |     | NULL    |       |
+| sub3   | int(11)     | YES  |     | NULL    |       |
+| sub4   | int(11)     | YES  |     | NULL    |       |
+| sub5   | int(11)     | YES  |     | NULL    |       |
+| sub6   | int(11)     | YES  |     | NULL    |       |
+| total  | int(11)     | YES  |     | NULL    |       |
+| avg    | int(11)     | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+MariaDB [college]> insert into table student(1,'shree','1991-10-19',50,50,50,50,50,50,0,0)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'table student(1,'shree','1991-10-19',50,50,50,50,50,50,0,0)' at line 1
+MariaDB [college]> insert into student(1,'shree','1991-10-19',50,50,50,50,50,50,0,0);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1,'shree','1991-10-19',50,50,50,50,50,50,0,0)' at line 1
+MariaDB [college]> insert into student(1,'shree','1991-10-10',50,50,50,50,50,50,0,0);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1,'shree','1991-10-10',50,50,50,50,50,50,0,0)' at line 1
+MariaDB [college]> insert into student values(1,'shree','1991-10-10',50,50,50,50,50,50,0,0);
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [college]> insert into student values(2,'lakshmi','1991-10-10',50,50,100,90,40,60,0,0);
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [college]> exit
+
