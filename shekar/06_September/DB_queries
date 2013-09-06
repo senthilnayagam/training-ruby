@@ -1,0 +1,54 @@
+create database college;
+
+//table create query
+create table student(
+      rollno integer primary key,
+      name varchar(30),
+      dob date,
+      subject1 varchar(30),
+      mark1 integer,
+      subject2 varchar(30),
+      mark2 integer,
+      subject3 varchar(30),
+      mark3 integer,
+      subject4 varchar(30),
+      mark4 integer,
+      subject5 varchar(30),
+      mark5 integer,      
+      subject6 varchar(30),
+      mark6 integer,
+      total integer,
+      avg float(5,2),
+      university varchar(30),
+      passout integer);
+
+//insert query
+
+insert into student values(
+1,'Chandra sekaran R','1990-03-28',
+'C programming',89
+'C++ and Data Structures',85,
+'Operating System',83,
+'RDBMS',90,
+'.NET programming',95,
+'Digital logic fundamentals',81,
+0,0,'University of Madras',2013);
+
+//update query
+
+update student set total=mark1+mark2+mark3+mark4+mark5+mark6;
+update student set avg=(total/600)*100;
+
+//select query
+
+select * from student;
++--------+-------------------+------------+---------------+-------+-------------------------+-------+------------------+-------+----------+-------+------------------+-------+----------------------------+-------+-------+------+----------------------+---------+
+| rollno | name              | dob        | subject1      | mark1 | subject2                | mark2 | subject3         | mark3 | subject4 | mark4 | subject5         | mark5 | subject6                   | mark6 | total | avg  | university           | passout |
++--------+-------------------+------------+---------------+-------+-------------------------+-------+------------------+-------+----------+-------+------------------+-------+----------------------------+-------+-------+------+----------------------+---------+
+|      1 | Chandra sekaran R | 1990-03-28 | C programming |    89 | C++ and Data Structures |    85 | Operating System |    83 | RDBMS    |    90 | .NET programming |    95 | Digital logic fundamentals |    81 |     0 | 0.00 | University of Madras |    2013 |
+|      2 | Hari dass M       | 1989-10-28 | C programming |    84 | C++ and Data Structures |    80 | Operating System |    73 | RDBMS    |    95 | .NET programming |    90 | Digital logic fundamentals |    71 |     0 | 0.00 | University of Madras |    2013 |
+|      3 | Ram kumar         | 1989-09-03 | C programming |    80 | C++ and Data Structures |    85 | Operating System |    70 | RDBMS    |    90 | .NET programming |    90 | Digital logic fundamentals |    61 |     0 | 0.00 | University of Madras |    2013 |
+|      4 | Kamala kannan K   | 1990-12-24 | C programming |    82 | C++ and Data Structures |    80 | Operating System |    78 | RDBMS    |    80 | .NET programming |    89 | Digital logic fundamentals |    85 |     0 | 0.00 | University of Madras |    2013 |
++--------+-------------------+------------+---------------+-------+-------------------------+-------+------------------+-------+----------+-------+------------------+-------+----------------------------+-------+-------+------+----------------------+---------+
+
+
