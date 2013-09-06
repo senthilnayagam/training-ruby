@@ -23,6 +23,7 @@ print "Grade : "
 grade=gets
 
 qry="insert into test_student values('#{name}',#{age.to_i},'#{grade}')"
+db1.query(qry)
 puts "#{name} record inserted"
 end
 
