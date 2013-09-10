@@ -1,5 +1,6 @@
 #Program to connect to database and perform basic DML operation.
 require 'mysql'
+
 begin
 
 db1=Mysql.new('localhost','root','root','college')
@@ -11,9 +12,11 @@ db1.query("insert into test_student values('Nataraj',21,'C')")
 db1.query("insert into test_student values('Ram kumar',22,'C')")
 db1.query("insert into test_student values('Raghavan',22,'B')")
 =end
+
 ds=db1.query("Select * from test_student order by grade asc")
 ds.each do |i|
 puts i.join(" ")
 end
+
 end
 

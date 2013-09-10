@@ -23,6 +23,6 @@ grade=gets
 
 qry="update test_student set sname='#{name}',age=#{age.to_i},grade='#{grade}')"
 db1.query(qry)
-puts "#{name} record inserted"
+puts "#{name} record updated"
 
 end
