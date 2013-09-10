@@ -12,5 +12,6 @@ get '/time' do
 end
 
 get '/hello' do
-  "hello"
+  name=params[:name]
+"hello "+name.to_s
 end
