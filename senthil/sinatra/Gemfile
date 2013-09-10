@@ -1,0 +1,6 @@
+require 'rubygems'
+
+# and now load bundler with your dependencies load paths
+require 'bundler/setup'
+
+gem "sinatra" 
