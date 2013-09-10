@@ -23,6 +23,8 @@ elsif(number==8)
 return 'VIII'
 elsif(number==9)
 return 'IX'
+elsif(number==10)
+return 'X'
 
 end
 
