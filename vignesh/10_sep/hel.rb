@@ -3,14 +3,20 @@ require 'bundler/setup'
 require 'sinatra'
 
 get '/hi' do
- "Hello world"
+  "Hello World!"
 end
 get '/time' do
  Time.now.to_s
 end
 
+
+
 get '/hello' do
+ 
+
+"hello"
 
 name=params[:name]
-" hello "+name.to_s
+"Hello "+ name.to_s + " :)"
+
 end

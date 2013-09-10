@@ -7,3 +7,9 @@ end
 get '/time' do
   "The time now is : " + Time.now.to_s
 end
+
+get '/hello'do
+  "Hello"
+  name=params[:name]
+  "Hello " + name.to_s + " Welcome!"
+end
