@@ -1,31 +1,27 @@
 class Roman
 
-def self.convert(n)
-case n
-when 1
- return "I"
-when 2
- return "II"
-when 3
- return "III"
-when 4
- return "IV"
-when 5
- return "V"
-when 6
- return "VI"
-when 7
- return "VII"
-when 8
- return "VIII"
-when 9
- return "IX"
-when 10
- return "X"
-when 11
- return "XI"
+def convert(num)
+ n=num
+case num
+when num.class=="Fixnum"
+	if(num>0 && num<4000)
+
+	thou=["","M","MM","MMM"]
+	hund=["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"]
+	ten=["","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"]
+	unit=["","I","II","III","IV","V","VI","VII","VIII","IX"]
+
+	th=num/1000
+	h=(num/100)%10
+	t=(num/10)%10
+	u=num%10
+
+	return thou[th]+hund[h]+ten[t]+unit[u]
+	else
+	return "Invalid number\n"
+	end
 else
- return "None"
+	print "Invalid data\n"
 end
 end
 

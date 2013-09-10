@@ -1,5 +1,5 @@
 class Prime
-def self.primeno(n)
+def self.prime?(n)
 count=0
 for i in 1..n
 if((n%i)==0)

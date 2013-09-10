@@ -5,11 +5,7 @@ require 'sinatra'
 get '/hi' do
   "Hello World!"
 end
-
 get '/time' do
-Time.now.to_s
-end
+ Time.now.to_s
 
-get '/hello' do
-"hello"
 end
