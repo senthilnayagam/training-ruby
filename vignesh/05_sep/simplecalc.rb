@@ -13,8 +13,8 @@ mul=a*b
 mul
 end
 def self.divide(a,b)
-if(b!=0)
-div= "Dnmntr shud not be zero"
+if(b==0)
+div="It shd not be zero"
 div
 else
 div=a/b
