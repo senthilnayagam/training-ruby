@@ -8,6 +8,6 @@ get '/time' do
   "The time now is : " + Time.now.to_s
 end
 
-get '/hello'?name=chandra do
+get '/hello' do #?name=chandra do
   "Hello"
 end
