@@ -5,12 +5,18 @@ require 'sinatra'
 get '/hi' do
   "Hello World!"
 end
-
-
 get '/time' do
-  Time.now.to_s
+ Time.now.to_s
 end
 
+
+
 get '/hello' do
-  "hello"
+ 
+
+"hello"
+
+name=params[:name]
+"Hello "+ name.to_s + " :)"
+
 end
