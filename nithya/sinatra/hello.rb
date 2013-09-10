@@ -21,8 +21,9 @@ get '/result/:roll_no' do
 result = "your result is"
 params[:roll_no]
 a = db_conn.query("select * from students where roll_no = #{params[:roll_no]}")
-a.each do |row|
-result +=  row.join("\s")
+a.each_hash do |key, value|
+result +=  key.to_s
+result +=  value.to_s
 end
 result
 end
