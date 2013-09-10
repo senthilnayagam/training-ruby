@@ -23,7 +23,7 @@ end
 
 get'/studb' do
 
-result= ' Result = '
+result= 'The Result is ' + "<br>"
 
 {
 "Name  "=>"VIGNESH  ",
@@ -32,9 +32,9 @@ result= ' Result = '
 }.each do |key,value|
 
 
-result = result+key.to_s
+result = result+key.to_s  
 
-result = result+value.to_s
+result = result+value.to_s + "<br>"
 
 end
 
