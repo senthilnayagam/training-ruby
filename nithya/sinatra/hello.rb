@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
-
+require 'mysql'
 get '/hi' do
   "Hello World!"
 end
@@ -11,5 +11,18 @@ Time.now.to_s
 end
 
 get '/hello' do
-"hello"
+name = params[:name]
+"hello "+name.to_s
+end
+
+get '/result/:roll_no' do
+   db_conn = Mysql.new('localhost', 'root', 'root', 'Training')
+   
+result = "your result is"
+params[:roll_no]
+a = db_conn.query("select * from students where roll_no = #{params[:roll_no]}")
+a.each do |row|
+result +=  row.join("\s")
+end
+result
 end
