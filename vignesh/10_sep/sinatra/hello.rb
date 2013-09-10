@@ -2,6 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 
+
 get '/hi' do
   "Hello World!"
 end
@@ -17,17 +18,27 @@ name=params[:name]
 
 
 "Hello "+ name.to_s + " :)"
+end
 
 
 get'/studb' do
 
-name=params[:name]
+result= ' Result = '
 
-db=Mysql.new('localhost','root','root','college')
+{
+"Name  "=>"VIGNESH  ",
+"RollNo "=>"19   ",
+"Subject  "=>"Data_Structure  "
+}.each do |key,value|
 
-ds=db.query("Select age from testfile where name like 'Ajay' ")
 
-ds.to_i
+result = result+key.to_s
+
+result = result+value.to_s
+
+end
+
+result
 
 end
 
