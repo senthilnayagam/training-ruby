@@ -1,0 +1,110 @@
+1.connecting to sql
+2.creating a database
+3.creating a table
+4.inserting values into it
+5.alterting the table
+6.viewing the created database
+
+manishree@client50:~$ mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 30
+Server version: 5.5.31-MariaDB-1~precise-log mariadb.org binary distribution
+
+Copyright (c) 2000, 2013, Oracle, Monty Program Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database sample
+    -> create database sample;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'create database sample' at line 2
+MariaDB [(none)]> create database sample;
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
++--------------------+
+4 rows in set (0.02 sec)
+
+MariaDB [(none)]> use sample
+Database changed
+MariaDB [sample]> alter table sample add name varchar(100)
+    -> ;
+ERROR 1146 (42S02): Table 'sample.sample' doesn't exist
+MariaDB [sample]> alter table sample add name varchar(100);
+ERROR 1146 (42S02): Table 'sample.sample' doesn't exist
+MariaDB [sample]> alter table 'sampl'e add 'name' varchar(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''sampl'e add 'name' varchar(100)' at line 1
+MariaDB [sample]> ALTER TABLE 'sample' ADD 'name' VARCHAR(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''sample' ADD 'name' VARCHAR(100)' at line 1
+MariaDB [sample]> create table student(name varchar(10),id int(2),marks int(3),address varchar(50));
+Query OK, 0 rows affected (0.31 sec)
+
+MariaDB [sample]> insert into student values('sri',1,60,'chennai');
+Query OK, 1 row affected (0.04 sec)
+
+MariaDB [sample]> insert into student values('lakshmi',2,80,'banglore');
+Query OK, 1 row affected (0.02 sec)
+
+MariaDB [sample]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
++--------------------+
+4 rows in set (0.00 sec)
+
+MariaDB [sample]> show student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'student' at line 1
+MariaDB [sample]> select * from student;
++---------+------+-------+----------+
+| name    | id   | marks | address  |
++---------+------+-------+----------+
+| sri     |    1 |    60 | chennai  |
+| lakshmi |    2 |    80 | banglore |
++---------+------+-------+----------+
+2 rows in set (0.00 sec)
+
+MariaDB [sample]> desc student
+    -> ;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(10) | YES  |     | NULL    |       |
+| id      | int(2)      | YES  |     | NULL    |       |
+| marks   | int(3)      | YES  |     | NULL    |       |
+| address | varchar(50) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+MariaDB [sample]> desc student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(10) | YES  |     | NULL    |       |
+| id      | int(2)      | YES  |     | NULL    |       |
+| marks   | int(3)      | YES  |     | NULL    |       |
+| address | varchar(50) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+MariaDB [sample]> show tables;
++------------------+
+| Tables_in_sample |
++------------------+
+| student          |
++------------------+
+1 row in set (0.00 sec)
+
+MariaDB [sample]> quit
+Bye
+

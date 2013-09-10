@@ -1,0 +1,71 @@
+ ruby roman_test.rb 
+Run options: 
+
+# Running tests:
+
+E.
+
+Finished tests in 0.013808s, 144.8468 tests/s, 0.0000 assertions/s.
+
+  1) Error:
+test_conversion(TestRoman):
+NameError: uninitialized constant TestRoman::Roman
+    roman_test.rb:7:in `test_conversion'
+
+
+
+E.
+
+Finished tests in 0.000457s, 4379.4917 tests/s, 0.0000 assertions/s.
+
+  1) Error:
+test_conversion(TestRoman):
+NoMethodError: undefined method `convert' for Roman:Class
+    roman_test.rb:7:in `test_conversion'
+
+
+
+ ruby roman_test.rb 
+Run options: 
+
+# Running tests:
+
+E.
+
+Finished tests in 0.000422s, 4736.5529 tests/s, 0.0000 assertions/s.
+
+  1) Error:
+test_conversion(TestRoman):
+ArgumentError: wrong number of arguments (1 for 0)
+    /home/manishree/training-ruby/shree/4thsept/roman.rb:4:in `convert'
+    roman_test.rb:7:in `test_conversion'
+
+2 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+
+# Running tests:
+
+F.
+
+Finished tests in 0.000656s, 3050.4033 tests/s, 1525.2017 assertions/s.
+
+  1) Failure:
+test_conversion(TestRoman) [roman_test.rb:7]:
+<"I"> expected but was
+<nil>.
+
+# Running tests:
+
+..
+
+Finished tests in 0.000376s, 5322.2489 tests/s, 2661.1244 assertions/s.
+
+
+
+    
+
+  git config --global user.name "Marishree"
+    git config --global user.email marishree@railsfactory.org
+
+
+

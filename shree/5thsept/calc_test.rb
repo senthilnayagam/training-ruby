@@ -9,5 +9,6 @@ class Testcalc < Test::Unit::TestCase
     assert_equal(4, Calc.mul(2,2) )
     assert_equal(2, Calc.div(8,4) )
     
+    
   end
 end

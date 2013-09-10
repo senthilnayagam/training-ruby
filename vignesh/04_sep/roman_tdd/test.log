@@ -1,0 +1,59 @@
+ ruby roman_test.rb 
+Run options: 
+
+# Running tests:
+
+E.
+
+Finished tests in 0.000459s, 4359.7300 tests/s, 0.0000 assertions/s.
+
+  1) Error:
+test_conversion(TestRoman):
+NameError: uninitialized constant TestRoman::Roman
+    roman_test.rb:7:in `test_conversion'
+
+2 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+
+test_conversion(TestRoman):
+NoMethodError: undefined method `convert' for Roman:Class
+    roman_test.rb:7:in `test_conversion'
+
+2 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+
+
+test_conversion(TestRoman):
+ArgumentError: wrong number of arguments (1 for 0)
+    /home/anand/training-ruby/vignesh/04_sep/roman_tdd/roman.rb:3:in `convert'
+    roman_test.rb:7:in `test_conversion'
+
+
+
+test_conversion(TestRoman) [roman_test.rb:7]:
+<"I"> expected but was
+<nil>.
+
+
+test_conversion(TestRoman) [roman_test.rb:8]:
+<"II"> expected but was
+<nil>.
+
+2 tests, 2 assertions, 1 failures, 0 errors, 0 skips
+test_conversion(TestRoman) [roman_test.rb:8]:
+<"II"> expected but was
+<nil>.
+
+2 tests, 2 assertions, 1 failures, 0 errors, 0 skips
+
+
+
+..
+
+Finished tests in 0.000390s, 5132.6139 tests/s, 5132.6139 assertions/s.
+
+2 tests, 2 assertions, 0 failures, 0 errors, 0 skips
+
+
+
+

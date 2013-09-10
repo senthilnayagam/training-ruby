@@ -2,15 +2,57 @@ create table student(
       rollno integer primary key,
       name varchar(30),
       dob date,
-      subject1 integer,
-      subject2 integer,
-      subject3 integer,
-      subject4 integer,
-      subject4 integer,
-      subject5 integer,
-      subject6 integer,
+      subject1 varchar(30),
+      mark1 integer,
+      subject2 varchar(30),
+      mark2 integer,
+      subject3 varchar(30),
+      mark3 integer,
+      subject4 varchar(30),
+      mark4 integer,
+      subject5 varchar(30),
+      mark5 integer,      
+      subject6 varchar(30),
+      mark6 integer,
       total integer,
-      avg float(3,2));
+      avg float(3,2),
+      university varchar(30),
+      passout integer);
+
+insert into student values(
+1,'Chandra sekaran R','1990-03-28',
+'C programming',89
+'C++ and Data Structures',85,
+'Operating System',83,
+'RDBMS',90,
+'.NET programming',95,
+'Digital logic fundamentals',81,
+0,0,'University of Madras',2013);
+
+insert into student values(
+5,'Raghavan','1990-12-24',
+'C programming',82,
+'C++ and Data Structures',80,
+'Operating System',78,
+'RDBMS',80,
+'.NET programming',89,
+'Digital logic fundamentals',85,
+0,0,'University of Madras',2013);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 MariaDB [(none)]> create database college
     -> ;

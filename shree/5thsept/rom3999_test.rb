@@ -13,6 +13,15 @@ class TestRoman3999 < Test::Unit::TestCase
     assert_equal('VII', Roman3999.convert(7) )
     assert_equal('VIII', Roman3999.convert(8) )
     assert_equal('IX', Roman3999.convert(9) )
+    assert_equal('L', Roman3999.convert(50) )
+    assert_equal('C', Roman3999.convert(100) )
+    assert_equal('C', Roman3999.convert(99) )
+    assert_equal('C', Roman3999.convert(100) )
+    assert_equal('C', Roman3999.convert(100) )
+    assert_equal('', Roman3999.convert(1000) )
+    assert_equal('C', Roman3999.convert(1234) )
+
+
     assert_equal('MMCMLXXXVII', Roman3999.convert(2987) )
   end
 
