@@ -18,7 +18,7 @@ end
 
 
 get '/rollno' do
-con=Mysql.new 'localhost','root','root','college'
+con=mysql.new 'localhost','root','root','college'
 res=con.query("select * from student where rno=101")
 res.each do |row|
 puts row
