@@ -1,4 +1,7 @@
+#require 'rubygems'
+#require 'bundler/setup'
 require 'sinatra'
+require 'mysql'
 
 get '/hi' do
   "Hello! This is Chandra."
@@ -13,3 +16,17 @@ get '/hello'do
   name=params[:name]
   "Hello " + name.to_s + " Welcome!"
 end
+
+get '/student_info' do
+  rollno=params[:rollno]
+  #rollno=1
+  db1=Mysql.new('localhost','root','root','college')
+  qry="select name from student where rollno=" + rollno.to_s
+  ds=db1.query(qry)
+  ds
+  
+  #ds.each do |i|
+  #puts i.join(" ")
+  #end
+end
+
