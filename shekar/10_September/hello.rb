@@ -18,17 +18,27 @@ get '/hello'do
 end
 
 get '/student_info' do
-k = "result"
+k = "Result :" + "<br>"
+=begin
 {"name"=>"Chandra sekaran","rollno"=>123,"subject1"=>"C","mark1"=>89,"subject2"=>"C++","mark2"=>85,"subject3"=>".NET","mark3"=>92,"subject4"=>"SQL Server","mark4"=>85,"Total"=>351,"Average"=>87.75}.each do |key, value| 
-k+=key + " " 
+k+=key + " : " 
 k+=value.to_s + "<br>"
+end
+k
+=end
+result={"name"=>"Chandra sekaran","rollno"=>123,"subject1"=>"C","mark1"=>89,"subject2"=>"C++","mark2"=>85,"subject3"=>".NET","mark3"=>92,"subject4"=>"SQL Server","mark4"=>85,"Total"=>351,"Average"=>87.75}
+rollno=params[:rollno]
+
+if result.has_value?(rollno.to_i)
+
+ result.each do |key,value|
+ k+=key + " : " 
+ k+=value.to_s + "<br>"
  end
-#rollno=params[:rollno]
-#if result.has_value?(123)
-
-   k
-#end
-
+else
+ "No record found"
+end
+k
 
 =begin
   rollno=params[:rollno]
