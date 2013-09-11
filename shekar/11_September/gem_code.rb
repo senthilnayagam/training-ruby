@@ -18,18 +18,17 @@ get '/hello'do
 end
 
 get '/student_info' do
-k = "Result :" + "<br>"
+ k = "Result :" + "<br>"
 
   rollno=params[:rollno]
 
   db1=Mysql.new('localhost','root','root','college')
-  qry="select name from student where rollno=" + rollno.to_s
+  qry="select name,dob,total,avg from student where rollno=" + rollno.to_s
   ds=db1.query(qry)
-    #ds.to_s
   ds.each do |i|
-    k+=i.join(" ")
+    k=k+i.join("<br>")
   end
-k
+ k
 end
 
 =begin
