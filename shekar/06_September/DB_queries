@@ -13,7 +13,7 @@ create table student(
       mark3 integer,
       subject4 varchar(30),
       mark4 integer,
-      subject5 varchar(30),
+      subject5 varchar(30),bgcolor=
       mark5 integer,      
       subject6 varchar(30),
       mark6 integer,
@@ -26,7 +26,7 @@ create table student(
         IronRuby
         RSpec
     Rails
-        Rails
+        Railsbgcolor=
         Rails Deployment
         Rails I18N
     Misc
@@ -35,7 +35,7 @@ create table student(
 
 //insert query
 
-insert into student values(
+insert into student values(bgcolor=
 1,'Chandra sekaran R','1990-03-28',
 'C programming',89
 'C++ and Data Structures',85,

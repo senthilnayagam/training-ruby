@@ -3,13 +3,13 @@ require 'bundler/setup'
 require 'sinatra'
 require 'mysql'
 
-get '/table' do
+get '/rollnum' do
   con=Mysql.new 'localhost','root','root','college'
-  #rollno=params[:rollno]
-  query="select * from student"
+  rollno=params[:rollno]
+  query="select * from student where rno=" + rollno.to_s
   res=con.query(query)
-  result= "<table border=1>
-	    <tr>
+  result = "<table border=1>
+	     <tr>
 		<th>RollNo</th>	
 		<th>Name</th>
 		<th>DOB</th>
@@ -29,10 +29,10 @@ get '/table' do
 		<th>Avg</th>
 		<th>University</th>
 		<th>Result</th>
-	   </tr>"
-		
+	    </tr> "
   res.each do |row|
     result += "<tr><td>" + row.join("</td><td>") + "</td></tr></table>"
+
   end
- result 
+result 
 end
