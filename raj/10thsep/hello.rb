@@ -4,11 +4,11 @@ require 'sinatra'
 require 'mysql'
 
 get '/hi' do
-  "Hello World!"
+  "Hai.. welcome to Railsfactory!"
 end
 
 get '/time' do
-     Time.now.to_s
+    "Today date and time:: " + Time.now.to_s
    end
    
 get '/hello' do
@@ -23,14 +23,14 @@ get '/rollno' do
   #res=con.query(query)
   
   res=  "<br>"
-  student={ "rno" => "raj",
-                   "name" => "102",
-                   "sub1" => "bio",
-                   "marks" => "89",
-                   "result" => "pass"
+  student={ "RNO" => "101",
+                   "NAME" => "RAJ",
+                   "SUB" => "COMPUTERS",
+                   "MARKS" => "89",
+                   "RESULT" => "PASS"
                     }.each do |key,value|
     
-res += key.to_s + " "
+res += key.to_s + " -> "
 
 res += value.to_s + "<br>"
 
