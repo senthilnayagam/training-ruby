@@ -19,6 +19,17 @@ create table student(
       mark6 integer,
       total integer,
       avg float(5,2),
+
+    Ruby
+        Ruby
+        JRuby
+        IronRuby
+        RSpec
+    Rails
+        Rails
+        Rails Deployment
+        Rails I18N
+    Misc
       university varchar(30),
       passout integer);
 
@@ -29,6 +40,17 @@ insert into student values(
 'C programming',89
 'C++ and Data Structures',85,
 'Operating System',83,
+
+    Ruby
+        Ruby
+        JRuby
+        IronRuby
+        RSpec
+    Rails
+        Rails
+        Rails Deployment
+        Rails I18N
+    Misc
 'RDBMS',90,
 '.NET programming',95,
 'Digital logic fundamentals',81,
