@@ -39,3 +39,16 @@ res += value.to_s + "<br>"
 end
   res
 end
+
+
+get '/rollnum' do
+  con=Mysql.new 'localhost','root','root','college'
+  rollno=params[:rollno]
+  query="select * from student where rno=" + rollno.to_s
+  res=con.query(query)
+  result= " "
+  res.each do |row|
+    result += row.to_s + " " + "<br>"
+  end
+result
+end
