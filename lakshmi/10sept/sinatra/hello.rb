@@ -20,6 +20,7 @@ end
 
 get '/rollno' do
 result=' '
+result2=' '
 student={ "name" => "Rajalakshmi ",
             "rollno" => "10",
             "subject" => "JAVA",
@@ -27,10 +28,12 @@ student={ "name" => "Rajalakshmi ",
             "result" => "pass"                       
           }
 student.each do |key,value|
-result += value + ' '
+result2 += key + '=>' + value +'<br>'
+
+
 
 end
-result
+result2
 end
 
 
