@@ -31,7 +31,33 @@ db =Mysql.new 'localhost' , 'root' , 'root' , 'college'
 
 rollno = params[:rollno]
 
-result=' '
+result = "Result :" + "<br>"
+
+result += "<table border=1 bgcolor=skyblue size=1000>
+<tr>
+
+<th>Roll No</th>
+<th>Name</th>
+<th>Date of Birth</th>
+<th>Subject</th>
+<th>Mark</th>
+<th>Subject</th>
+<th>Mark</th>
+<th>Subject</th>
+<th>Mark</th>
+<th>Subject</th>
+<th>Mark</th>
+<th>Subject</th>
+<th>Mark</th>
+<th>Subject</th>
+<th>Mark</th>
+<th>Total</th>
+<th>Average</th>
+<th>University</th>
+<th>Year</th>
+
+</tr>"
+ 
 
 qry="SELECT * FROM student where rollno="+rollno.to_s;
 
@@ -39,7 +65,10 @@ ds=db.query(qry)
 
 
 ds.each do |row|
-result += row.join("<br>")
+result += "<tr><td>"+ row.join("</td><td>") + "</td></tr>"
 end
+result += "</table>"
 result
 end
+
+
