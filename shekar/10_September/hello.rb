@@ -30,7 +30,6 @@ result={"name"=>"Chandra sekaran","rollno"=>123,"subject1"=>"C","mark1"=>89,"sub
 rollno=params[:rollno]
 
 if result.has_value?(rollno.to_i)
-
  result.each do |key,value|
  k+=key + " : " 
  k+=value.to_s + "<br>"
