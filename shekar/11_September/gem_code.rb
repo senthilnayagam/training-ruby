@@ -19,14 +19,16 @@ end
 
 get '/student_info' do
  k = "Result :" + "<br>"
-
+ a=['Name: ','Date of Birth: ','Total marks: ','Average: ']
+ i=0
   rollno=params[:rollno]
 
   db1=Mysql.new('localhost','root','root','college')
   qry="select name,dob,total,avg from student where rollno=" + rollno.to_s
   ds=db1.query(qry)
-  ds.each do |i|
-    k=k+i.join("<br>")
+  ds.each do |l|
+    k= k + a[i] + l.join("<br>")
+    i+=1
   end
  k
 end
