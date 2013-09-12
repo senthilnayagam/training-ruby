@@ -37,8 +37,17 @@ end
 result
 end
 
+get '/result' do
+string="<HTML>
+<BODY>
+<FORM action=\"/rollno\" method=\"get\">
 
-
+ROLL NO: <input type=\"TEXT\" name=\"rollno\">
+ <input type=\"submit\" value=\"Submit\">
+</FORM >
+</BODY>
+</HTML>"
+end
 
 
 
