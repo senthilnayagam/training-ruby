@@ -18,12 +18,16 @@ end
 get '/result/:roll_no' do
    db_conn = Mysql.new('localhost', 'root', 'root', 'Training')
    
-result = "your result is"
+result = "your result is" + "<br>"
 params[:roll_no]
-a = db_conn.query("select * from students where roll_no = #{params[:roll_no]}")
-a.each_hash do |key, value|
-result +=  key.to_s
-result +=  value.to_s
+#~ a = db_conn.query("select * from students where roll_no = #{params[:roll_no]}")
+{"roll_no" => "102",
+   "Name" => "nithyahaarish",
+   "marks" => "90",
+    "result" => "pass"}.each do |key, value|
+result +=  key.to_s  + "=>"
+result +=  value + "<br>"
+p result
 end
 result
 end
