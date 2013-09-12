@@ -8,7 +8,6 @@ con = Mysql.new 'localhost', 'root', 'root', 'test1'
 rollno = params[:rollno]
 head="<html><title>Result</title><head><link rel=\"stylesheet\" type=\"text/css\" href=\"/mystyle.css\"></link>
 <style>
-
 table
 {
 background-color:#D8BFD8;
