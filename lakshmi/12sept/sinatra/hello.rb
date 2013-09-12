@@ -20,7 +20,7 @@ color:	#008B8B;
 font-size:35;
 }
 h1{
-color:#FFFFFF;
+color:	#483D8B;
 font-family: arial, verdana, sans-serif;
 font-size:35px;
 }
@@ -32,8 +32,11 @@ function goBack()
   }
 </script>
 <br/>
+<br/>
+<br/>
+<h1>St Joseph's college of Arts and Science</h1>
 <marquee>Your result is </marquee><br/><br/>
-</head><body style=\"background-color:#4B0082;\">"
+</head><body style=\"background-color:#AFEEEE;\">"
 
 str="<center><input type=\"button\" value=\"Back\" onclick=\"goBack()\" ></center>"
 
@@ -72,12 +75,15 @@ end
 get '/result' do
 string="<HTML>
 <title>	Result :</title>
-<head><h1> Result</h1></head>
+<head><h1>St Joseph's college of Arts and Science </h1>
+	<h2> Get to know your result </h2></head>
 <style>
 body{
 margin-left:300px;
 color:	#008B8B;
+
 }
+
 h1{
 color:	#FFFFFF;
 font-family: arial, verdana, sans-serif;
