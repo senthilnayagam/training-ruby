@@ -9,16 +9,21 @@ end
 
 get '/result_info' do
  k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body><img src=\"/home/chandrasekar/Chan_Programs/mm.png\"><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><form><br><h3>University of Madras Results 2013 (PG) - MCA (PG)</h3><br><br>"
- k+="<table border=1 bgcolor=grey size=1000><tr><th>Roll No</th><th>Name</th><th>Date of Birth</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Total</th><th>Average</th><th>University</th><th>Year</th></tr>"
-
+ k+="<table border=\"1\" bgcolor=\"#F0F0F0\"  size=\"1000\">
+a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','Mark','Allied','Mark','Allied','Mark','Total','Average']  
+  ar=""
+  m=0
   rollno=params[:rollno]
-
   db1=Mysql.new('localhost','root','root','college')
   qry="select * from student where rollno=" + rollno.to_s
   ds=db1.query(qry)
+  ds.each do |n|
+    ar=ar + n.join().to_s
+  end
   if ds!="nil"
-    ds.each do |l|
-      k= k +"<tr><td>"+ l.join("</td><td>") + "</td></tr>"
+    while m <= a.length-1
+      k= k + "<tr><td>" + a[m].to_s + "</td><td>" + ar[m].to_s + "</td></tr>"
+      m+=1
     end
   else
     va="<p>No such roll number exists!</p><center><br><br><a href=\'/result'\"><i>Back to home</i></a></form></body></html>"
@@ -33,8 +38,8 @@ end
 
 get '/result' do
 s="<html><head><title>University of Madras Result 2013 page</title></head>
-<body><img src=\'/home/chandrasekar/Chan_Programs/mm.png\'></img><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><center><br><h3>University of Madras Results 2013 (PG) - MCA</h3><br>
-<form id=\"login\" action=\"/get_result\" method=\"get\">
+<body bgcolor=\"#F0F0F0\"><img src=\'/home/chandrasekar/Chan_Programs/mm.png\'></img><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><center><br><h3>University of Madras Results 2013 (PG) - MCA</h3><br>
+<form id=\"login\" action=\"/result_info\" method=\"get\">
 <table border=\"1\" size=\"700\ height=\"500\">
 <tr><td align=\"center\"><br><br>
 Roll Number : <input type=\"text\" name=\"rollno\"><br><br>
@@ -49,7 +54,7 @@ end
 
 get '/get_result' do
 
-  k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body bgcolor=\"#D8D8D8\"><img src=\"/home/chandrasekar/Chan_Programs/mm.png\"><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><form><br><h3>University of Madras Results 2013 (PG) - MCA (PG)</h3><br><br>"
+  k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body bgcolor=\"#F0F0F0\"><img src=\"/home/chandrasekar/Chan_Programs/mm.png\"><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><form><br><h3>University of Madras Results 2013 (PG) - MCA (PG)</h3><br><br>"
  
   rollno=params[:rollno]  
 
