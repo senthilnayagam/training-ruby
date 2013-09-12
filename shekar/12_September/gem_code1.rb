@@ -9,7 +9,7 @@ end
 
 get '/result_info' do
  k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body><img src=\"/home/chandrasekar/Chan_Programs/mm.png\"><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><form><br><h3>University of Madras Results 2013 (PG) - MCA (PG)</h3><br><br>"
- k+="<table border=\"1\" bgcolor=\"#F0F0F0\"  size=\"1000\">
+ k+="<table border=\"1\" bgcolor=\"#F0F0F0\"  size=\"1000\">"
 a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','Mark','Allied','Mark','Allied','Mark','Total','Average']  
   ar=""
   m=0
@@ -18,7 +18,7 @@ a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','M
   qry="select * from student where rollno=" + rollno.to_s
   ds=db1.query(qry)
   ds.each do |n|
-    ar=ar + n.join().to_s
+    ar=n.join(",").to_s
   end
   if ds!="nil"
     while m <= a.length-1
@@ -39,7 +39,7 @@ end
 get '/result' do
 s="<html><head><title>University of Madras Result 2013 page</title></head>
 <body bgcolor=\"#F0F0F0\"><img src=\'/home/chandrasekar/Chan_Programs/mm.png\'></img><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><center><br><h3>University of Madras Results 2013 (PG) - MCA</h3><br>
-<form id=\"login\" action=\"/result_info\" method=\"get\">
+<form id=\"login\" action=\"/get_result\" method=\"get\">
 <table border=\"1\" size=\"700\ height=\"500\">
 <tr><td align=\"center\"><br><br>
 Roll Number : <input type=\"text\" name=\"rollno\"><br><br>
