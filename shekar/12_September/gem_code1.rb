@@ -21,7 +21,7 @@ get '/result_info' do
       k= k +"<tr><td>"+ l.join("</td><td>") + "</td></tr>"
     end
   else
-    va="No such roll number exists!"
+    va="No such roll number exists!</table><center><br><br><a href=\'/result'\"><i>Back to home</i></a></form></body></html>"
     return va
   end
   k+="</table><center><br><br><a href=\'/result'\"><i>Back to home</i></a></form><p><ul>
