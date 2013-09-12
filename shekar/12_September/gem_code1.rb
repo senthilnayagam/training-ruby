@@ -8,7 +8,7 @@ get '/hi' do
 end
 
 get '/result_info' do
- k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body><br><h5>University of Madras Results 2013 - MCA (PG)</h5><br><br>"
+ k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body><form><br><h3>University of Madras Results 2013 - MCA (PG)</h3><br><br>"
  k+="<table border=1 bgcolor=grey size=1000><tr><th>Roll No</th><th>Name</th><th>Date of Birth</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Total</th><th>Average</th><th>University</th><th>Year</th></tr>"
 
   rollno=params[:rollno]
@@ -24,7 +24,7 @@ get '/result_info' do
     va="No such roll number exists!"
     return va
   end
-  k+="</table><center><br><br><a href=\'/result'\"></body></html>"
+  k+="</table><center><br><br><a href=\'/result'\"><i>Back to home</i></a></form></body></html>"
   return k
 end
 
