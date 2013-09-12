@@ -8,7 +8,7 @@ get '/hi' do
 end
 
 get '/result_info' do
- k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body><form><br><h3>University of Madras Results 2013 - MCA (PG)</h3><br><br>"
+ k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body><form><br><h3>University of Madras Results 2013 (PG) - MCA (PG)</h3><br><br>"
  k+="<table border=1 bgcolor=grey size=1000><tr><th>Roll No</th><th>Name</th><th>Date of Birth</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Subject</th><th>Mark</th><th>Total</th><th>Average</th><th>University</th><th>Year</th></tr>"
 
   rollno=params[:rollno]
@@ -30,7 +30,7 @@ end
 
 get '/result' do
 s="<html><head><title>University of Madras Result 2013 page</title></head>
-<body><center><br><h3>Madras University Results 2013 - MCA</h3><br>
+<body><marquee bgcolor=\"yellow\"><font color=red><b>University id Madras PG Results 2013</b></font></marquee><center><br><h3>University of Madras Results 2013 (PG) - MCA</h3><br>
 <form id=\"login\" action=\"/result_info\" method=\"get\">
 <table border=\"1\" size=\"500\">
 <tr><td align=\"center\">
