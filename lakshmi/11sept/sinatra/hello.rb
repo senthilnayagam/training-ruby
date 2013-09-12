@@ -6,6 +6,15 @@ require 'mysql'
 get '/rollno' do 
 con = Mysql.new 'localhost', 'root', 'root', 'test1'
 rollno = params[:rollno]
+head="<html><title>Result</title><head><script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script><marquee>Your result is </marquee></head><body>"
+str="<input type=\"button\" value=\"Back\" onclick=\"goBack()\">"
+
+foot="</body></html>"
 result=' '+" <table border=1>
 		<tr>
 		  <th>rollno</th>
@@ -28,28 +37,29 @@ result=' '+" <table border=1>
                     <th>University</th>
                     <th>year</th>
                  </tr>"
-#qry="SELECT * FROM student";
-		qry="SELECT * FROM student where rollno="+rollno.to_s;
-		rs = con.query(qry)
-		rs.each do |row|
-		result +="<tr><td>"+ row.join("</td><td>") + "</td></tr>"
+
+qry="SELECT * FROM student where rollno="+rollno.to_s;
+rs = con.query(qry)
+rs.each do |row|
+result +="<tr><td>"+ row.join("</td><td>") + "</td></tr></table>" 
 end
-result
+head+result+str+foot
 end
 
+get '/result' do
+string="<HTML>
+<title>	Result :</title>
+<head><h1> Result</h1></head>
+<BODY>
+<FORM action=\"/rollno\" method=\"get\">
 
+ROLL NO: <input type=\"TEXT\" name=\"rollno\">
+ <input type=\"submit\" value=\"Submit\">
 
-
-
-
-
-
-
-
-
-
-
-
+</FORM >
+</BODY>
+</HTML>"
+end
 
 
 
