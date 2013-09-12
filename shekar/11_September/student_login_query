@@ -1,0 +1,17 @@
+create table student_login
+(user_name varchar(20),
+password varchar(30),
+permission varchar(25));
+
+insert into student_login values('chandra sekaran','123','Read,Write,Execute');
+insert into student_login values('kamal','123','Read,Write,Execute');
+insert into student_login values('raghavan','123','Read,Write');
+ select * from student_login;
++-----------------+----------+--------------------+
+| user_name       | password | permission         |
++-----------------+----------+--------------------+
+| chandra sekaran | 123      | Read,Write,Execute |
+| kamal           | 123      | Read,Write,Execute |
+| raghavan        | 123      | Read,Write         |
++-----------------+----------+--------------------+
+

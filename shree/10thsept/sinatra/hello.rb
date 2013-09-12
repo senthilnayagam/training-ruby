@@ -18,7 +18,7 @@ get '/hello' do
 end
 
 get '/db' do
-result = 'RESULT IS : '
+result = 'RESULT IS : '+ "<br>"
 
 {
 "name"=>"Shree",
@@ -27,9 +27,9 @@ result = 'RESULT IS : '
 "mark"=>50
 
 }.each do |key,value|
-result +=  key.to_s
+#result +=  key.to_s
 
-result +=  value.to_s
+result +=  key.to_s + ":" + value.to_s + "<br>"
 end
 
 result
