@@ -35,10 +35,10 @@ get '/result' do
 s="<html><head><title>University of Madras Result 2013 page</title></head>
 <body><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><center><br><h3>University of Madras Results 2013 (PG) - MCA</h3><br>
 <form id=\"login\" action=\"/result_info\" method=\"get\">
-<table border=\"1\" size=\"700\">
-<tr><td align=\"center\">
+<table border=\"1\" size=\"700\ height=\"500\">
+<tr><td align=\"center\"><br><br>
 Roll Number : <input type=\"text\" name=\"rollno\"><br><br>
-Click here <input type=\"submit\" value=\"submit\" name=\"submit\">
+Click here <input type=\"submit\" value=\"submit\" name=\"submit\"><br><br>
 </td></tr>
 </table><br><br>
 </form>
