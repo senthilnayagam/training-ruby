@@ -20,66 +20,66 @@ get '/test' do
     return va
   end
   db1=Mysql.new('localhost','root','root','college')	# print name
-  qry="select name from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select name from student where rollno=" + rollno.to_s)
   ds.each do |l|
     k= k +"<tr><th>Name : </th><td>"+ l.join() + "</td><tr>"
   end
+  db1=Mysql.new('localhost','root','root','college')	# print roll no
+  ds=db1.query("select rollno from student where rollno=" + rollno.to_s)
+  ds.each do |l|
+    k= k +"<tr><th>Roll No : </th><td>"+ l.join() + "</td><tr>"
+  end
   db1=Mysql.new('localhost','root','root','college')	# print dob
-  qry="select dob from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select dob from student where rollno=" + rollno.to_s)
   ds.each do |l|
     k= k +"<tr><th>DOB : </th><td>"+ l.join() + "</td><tr>"
-  end
+  end  
   k+="</table><br><table border=\"1\" width=\"500\"><tr><th>Subject</th><th>Title</th><th>Mark</th></tr>"
+
   db1=Mysql.new('localhost','root','root','college')	# print subject1,mark1
-  qry="select subject1,mark1 from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select subject1,mark1 from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Major : </th><td>"+ l.join("</td><td>") + "</td><tr>"
+    k= k +"<tr><th>Major </th><td>"+ l.join("</td><td>") + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print subject2,mark2
-  qry="select subject2,mark2 from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select subject2,mark2 from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Major : </th><td>"+ l.join("</td><td>") + "</td><tr>"
+    k= k +"<tr><th>Major </th><td>"+ l.join("</td><td>") + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print subject3,mark3
-  qry="select subject3,mark3 from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select subject3,mark3 from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Major : </th><td>"+ l.join("</td><td>") + "</td><tr>"
+    k= k +"<tr><th>Major </th><td>"+ l.join("</td><td>") + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print subject4,mark4
-  qry="select subject4,mark4 from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select subject4,mark4 from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Major : </th><td>"+ l.join("</td><td>") + "</td><tr>"
+    k= k +"<tr><th>Major </th><td>"+ l.join("</td><td>") + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print subject5,mark5
-  qry="select subject5,mark5 from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select subject5,mark5 from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Allied : </th><td>"+ l.join("</td><td>") + "</td><tr>"
+    k= k +"<tr><th>Allied </th><td>"+ l.join("</td><td>") + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print subject6,mark6
-  qry="select subject6,mark6 from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select subject6,mark6 from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Allied : </th><td>"+ l.join("</td><td>") + "</td><tr>"
+    k= k +"<tr><th>Allied </th><td>"+ l.join("</td><td>") + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print total
-  qry="select total from student where rollno=" + rollno.to_s
-  ds=db1.query(qry)
+  ds=db1.query("select total from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Total : </th><td></td><td>"+ l.join("</td></tr>")
+    k= k +"<tr><th>Total </th><td></td><td>"+ l.join("</td></tr>")
   end
   db1=Mysql.new('localhost','root','root','college')	# print average
   ds=db1.query("select avg from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Average : </th><td></td><td>"+ l.join("</td></tr>")
+    k= k +"<tr><th>Average </th><td></td><td>"+ l.join("</td></tr>")
   end
-  k+="</table></form></center></body></html>"  
+  k+="</table></form><br><br><a href=\'/result'\"><i>Back to home</i></a></form><p><ul>
+<li>This is a computer gerenated result and hence are prone to system error.</li>
+<li>This web site may not gaureenty the precision of subject marks.</li>
+</ul></p></center></body></html>"  
   return k
 # ends
 
