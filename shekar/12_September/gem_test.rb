@@ -22,17 +22,17 @@ get '/test' do
   db1=Mysql.new('localhost','root','root','college')	# print name
   ds=db1.query("select name from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Name : </th><td>"+ l.join() + "</td><tr>"
+    k= k +"<tr align=\"left\"><th>Name : </th><td>"+ l.join() + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print roll no
   ds=db1.query("select rollno from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>Roll No : </th><td>"+ l.join() + "</td><tr>"
+    k= k +"<tr align=\"left\"><th>Roll No : </th><td>"+ l.join() + "</td><tr>"
   end
   db1=Mysql.new('localhost','root','root','college')	# print dob
   ds=db1.query("select dob from student where rollno=" + rollno.to_s)
   ds.each do |l|
-    k= k +"<tr><th>DOB : </th><td>"+ l.join() + "</td><tr>"
+    k= k +"<tr align=\"left\"><th>DOB : </th><td>"+ l.join() + "</td><tr>"
   end  
   k+="</table><br><table border=\"1\" width=\"500\"><tr><th>Subject</th><th>Title</th><th>Mark</th></tr>"
 
@@ -76,7 +76,7 @@ get '/test' do
   ds.each do |l|
     k= k +"<tr><th>Average </th><td></td><td>"+ l.join("</td></tr>")
   end
-  k+="</table></form><br><br><a href=\'/result'\"><i>Back to home</i></a></form><p><ul>
+  k+="</table></form><br><a href=\'/result'\"><i>Back to home</i></a></form><p><ul>
 <li>This is a computer gerenated result and hence are prone to system error.</li>
 <li>This web site may not gaureenty the precision of subject marks.</li>
 </ul></p></center></body></html>"  
