@@ -137,14 +137,15 @@ get '/test' do
  k+="<table border=\"1\" bgcolor=\"#F0F0F0\"  size=\"1000\">"
 a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','Mark','Allied','Mark','Allied','Mark','Total','Average']  
   ar=Array.new
+  ds=Array.new
   m=0
   i=0
-
-  ds=con.dml_select
-  ds.each do |n|
-    ar[i]=n.join().to_s
+  rollno=params[:rollno]
+  ds=con.dml_select(rollno)
+  #ds.each do |n|
+    ar=ds.fetch_row.join("\s")
     i+=1
-  end
+  #end
   if ds!="nil"
     while m <= ar.length-1
       k= k + "<tr><td>" + a[m].to_s + "</td><td>" + ar[m].to_s + "</td></tr>"
