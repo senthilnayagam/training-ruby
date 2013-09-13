@@ -1,0 +1,23 @@
+#header {
+    margin-top:0px;
+    height:50px;
+    background:#00BFFF;
+    margin-bottom:50px;
+}
+#footer {
+    height: 30px;
+    background:#708090;
+    position: absolute;
+    margin-bottom: 0;
+  }
+h1{
+  font:bold;
+  margin-top:30px;
+}
+marquee{
+   color:#ADD8E6;
+}
+h4{ 
+  color:#191970;
+  align:center;
+}
