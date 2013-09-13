@@ -67,9 +67,11 @@ result=' '+" <table border=1>
 qry="SELECT * FROM student where rollno="+rollno.to_s;
 rs = con.query(qry)
 rs.each do |row|
+
 result +="<tr><td>"+ row.join("</td><td>") + "</td></tr></table><br/><br/></br>" 
 end
-head+result+str+foot
+head+result+str
+
 end
 
 get '/result' do
@@ -101,6 +103,25 @@ ROLL NO: <input type=\"TEXT\" name=\"rollno\"><br/><br/>
 </BODY>
 </HTML>"
 end
+
+get "mystyle.css" do
+"body {
+margin:100px;
+}
+
+
+h1 {
+color:#00ff00;
+}
+
+
+table
+{
+background-color:yellow;
+}"
+end 
+
+
 
 
 
