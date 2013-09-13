@@ -104,6 +104,23 @@ ROLL NO: <input type=\"TEXT\" name=\"rollno\"><br/><br/>
 </HTML>"
 end
 
+get "mystyle.css" do
+"body {
+margin:100px;
+}
+
+
+h1 {
+color:#00ff00;
+}
+
+
+table
+{
+background-color:yellow;
+}"
+end 
+
 
 
 
