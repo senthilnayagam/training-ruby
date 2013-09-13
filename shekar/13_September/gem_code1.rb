@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'mysql'
-require 'connection'
+require '/home/chandrasekar/training-ruby/shekar/13_September/connection'
 
 get '/hi' do
   "Hello! This is Chandra."
@@ -139,15 +139,15 @@ a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','M
   ar=Array.new
   m=0
   i=0
-  rollno=params[:rollno]  
+
   ds=con.dml_select
   ds.each do |n|
-    ar[i]=n.row[i].to_s
+    ar[i]=n.join().to_s
     i+=1
   end
   if ds!="nil"
-    while m <= ds.length-1
-      k= k + "<tr><td>" + a[m].to_s + "</td><td>" + ds[m].to_s + "</td></tr>"
+    while m <= ar.length-1
+      k= k + "<tr><td>" + a[m].to_s + "</td><td>" + ar[m].to_s + "</td></tr>"
       m+=1
     end
   else
