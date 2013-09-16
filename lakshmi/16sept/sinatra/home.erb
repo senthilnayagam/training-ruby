@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>
+Result
+</title>
+<h1>
+<marquee>Welcome to St.Joseph's college of science
+</marquee>
+</h1>
+<style>
+
+table
+{
+background-color:#D8BFD8;
+color:#4B0082;
+}
+marquee
+{
+color:	#008B8B;
+font-size:35;
+}
+h1{
+color:	#483D8B;
+font-family: arial, verdana, sans-serif;
+font-size:35px;
+}
+</style>
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script>
+<br/>
+<br/>
+<br/>
+</head>
+<body>
+
+<% con = Mysql.new 'localhost', 'root', 'root', 'test1' %>
+<% qry="SELECT * FROM student where rollno=1" %>
+<% rs = con.query(qry) %>
+<% rs.each do |row| %>
+<% row.join("\s") %>
+<% end %>
+
+
+</body>
+</html>
+

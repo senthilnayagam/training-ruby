@@ -1,0 +1,27 @@
+create database Employee;
+
+create table employee(
+id int primary key,
+name varchar(25) not null,
+desig varchar(20) not null,
+grade char(1) not null,
+qcc_team varchar(20) not null,
+qcc_expo varchar(30) not null);
+
+insert into employee values(1,'Chandra sekaran','Ass.PLE','B','QCC PLE3','Expo to erect a new engine valve grinder.');
+insert into employee values(2,'Ram kumar','Jr.PLE','C','QCC PLE3','Expo to erect a new engine valve grinder.');
+insert into employee values(3,'Raghavan','Jr.PLE','C','QCC PLE3','Expo to erect a new engine valve grinder.');
+insert into employee values(4,'Hai dass','Sr.PLE','A','QCC PLE3','Expo to erect a new engine valve grinder.');
+insert into employee values(5,'Mohan lal','Ass.PLE','B','QCC PLE3','Expo to erect a new engine valve grinder.');
+
+mysql> select * from employee;
++----+-----------------+---------+-------+----------+-------------------------------------------+
+| id | name            | desig   | grade | qcc_team | qcc_expo                                  |
++----+-----------------+---------+-------+----------+-------------------------------------------+
+|  1 | Chandra sekaran | Ass.PLE | B     | QCC PLE3 | Expo to erect a new engine valve grinder. |
+|  2 | Ram kumar       | Jr.PLE  | C     | QCC PLE3 | Expo to erect a new engine valve grinder. |
+|  3 | Raghavan        | Jr.PLE  | C     | QCC PLE3 | Expo to erect a new engine valve grinder. |
+|  4 | Hai dass        | Sr.PLE  | A     | QCC PLE3 | Expo to erect a new engine valve grinder. |
+|  5 | Mohan lal       | Ass.PLE | B     | QCC PLE3 | Expo to erect a new engine valve grinder. |
++----+-----------------+---------+-------+----------+-------------------------------------------+
+

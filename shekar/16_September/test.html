@@ -1,0 +1,21 @@
+<html>
+<body>
+n1 <input type = "number" id = "n1" value=15 />
+n2 <input type = "number" id = "n2" value=20 />
+
+<p>Sum?</p>
+<button onclick="sum()">Try it</button>
+<p id="demo2">Result?? </p>
+
+<script type="text/javascript">
+ function sum() 
+{ 
+    var fn, ln; 
+    fn = document.getElementById("n1").value; 
+    ln = document.getElementById("n2").value; 
+    result =  parseInt(fn)+parseInt(ln); 
+    document.getElementById("demo2").innerHTML = result; 
+}
+</script>
+</body>
+</html>
