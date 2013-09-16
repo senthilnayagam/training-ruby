@@ -1,0 +1,52 @@
+
+<htmnl>
+<head>
+<title>JNTU Results</title>
+<script>
+function goBack(){
+   window.history.back()
+}
+</script>
+<link rel="stylesheet" type="text/css" href="/styles.css">
+
+</head>
+
+
+<body bgcolor="#2F4F4F">
+<table border=1 style="background-color:#B0C4DE">
+
+<div id="header">
+<h1>JNTU RESULTS</h1><h4>(JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY)</h4>
+</div>
+   	<tr>
+		<th>RollNo</th>	
+		<th>Name</th>
+		<th>DOB</th>
+		<th>Sub1</th>
+		<th>Marks1</th>
+		<th>Sub2</th>
+		<th>Marks2</th>
+		<th>sub3</th>
+		<th>Marks3</th>
+		<th>Sub4</th>
+		<th>Marks4</th>
+		<th>Sub5</th>
+		<th>Marks5</th>
+		<th>Sub6</th>	
+		<th>Marks6</th>
+		<th>Total</th>
+		<th>Avg</th>
+		<th>University</th>
+		<th>Result</th>
+	   </tr>
+
+<% 
+obj=Result.new
+obj.res.each do |row| %>
+<tr><td> <%= row %> </td><td></td></tr>
+<% end %>
+</table>
+
+<input type="button" value="Back" onclick="goBack()" align="center"><div id="footer"></div>
+</html>
+ 
