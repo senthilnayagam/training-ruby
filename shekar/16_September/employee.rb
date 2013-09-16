@@ -7,11 +7,12 @@ require 'mysql'
 class Employee
  @@con
  def initialize()
-    @@con=Mysql.new('localhost','root','root','college')    
+    @@con=Mysql.new('localhost','root','root','Employee')    
  end
  def select(id)
+   con1=Mysql.new('localhost','root','root','Employee')
    qry="select * from employee where id=" + id.to_s
-   ds=@@con.query(qry)
+   ds=con1.query(qry)
    return ds
  end
  def insert(id,name,desig,grade,qcc_team,qcc_expo)

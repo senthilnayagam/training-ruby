@@ -4,8 +4,7 @@
 <script type="text/javascript">
 function clear_all()
 {
-alert("hi")
-document.getElementById('task').value="insert";
+document.getElementById('task').value="delete";
 alert(document.getElementById('task').value);
 /*document.getElementsByName('id')[0].value = "123";
 document.getElementsByName('name')[1].value = "";
@@ -15,12 +14,22 @@ document.getElementsByName('qcc_team')[4].value = "";
 document.getElementsByName'qcc_expo')[5].value = "";
 document.getElementsByName("id")[0].focus();
 alert(document.getElementById('task').value);
-alert(document.form1.elements['task'].value);%/
+alert(document.form1.elements['task'].value);*/
+}
+funtion insert()
+{
+document.getElementById('task').value="insert";
+alert(document.getElementById('task').value);
+}
+funtion view()
+{
+document.getElementById('task').value="view";
+alert(document.getElementById('task').value);
 }
 </script>
 <center>
 <h3>REVL - Plant Engineering Dept</h3><br><hr><br>
-<form id="form1" method="get" action="" onsubmit="">
+<form id="form1" method="get" action="/get_data">
 <table border=1 bgcolor=#FAF0E6 width=500>
 <tr><th colspan="2"><b>Employee Data</b></th></tr>
 <tr><td>ID No </td><td><input type="text" name="id" id="id"> </td></tr>
@@ -30,11 +39,13 @@ alert(document.form1.elements['task'].value);%/
 <tr><td>QCC Team </td><td><input type="text" name="qcc_team"> </td></tr>
 <tr><td>QCC expo </td><td><input type="text" name="qcc_expo"> </td></tr>
 <tr><td colspan="2" align="center">
-<input id="save" type="submit" name="Save" value="Save">  
+<input id="save" type="submit" name="Save" value="Save" onsubmit="insert()">  
 <input id="new" type="reset" name="New" value="New">
 <button id="delete" type="button" onclick="clear_all()">Delete</button>
 <button id="update" type="button" onclick="">Update</button>
-<input type="hidden" id="task" name="task" value=""/>
+<input type="hidden" id="task" name="task" value="task"/>
+<button id="view1" type="button" onclick="view()">View1</button>
+<input id="view" type="submit" name="View" value="View" onclick="view()"> 
 </td></tr>
 </table>
 </form>
