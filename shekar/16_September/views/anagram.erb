@@ -1,14 +1,35 @@
 <html>
 <head><title>Anagram</title></head>
 <body>
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["form1"]["text1"].value;
+var y=document.forms["form1"]["text2"].value;
+
+if (!form1.text1.value.match(/^[a-zA-Z]+$/) && form1.text1.value !="")
+               {
+                    form1.text1.value="";
+                    form1.text1.focus(); 
+                    alert("Please Enter only alphabets in text");
+               }
+if (!form1.text2.value.match(/^[a-zA-Z]+$/) && form1.text2.value !="")
+{
+                    form1.text2.value="";
+                    form1.text2.focus(); 
+                    alert("Please Enter only alphabets in text");
+               }
+}
+</script>
 <center>
-<form id="form1" method="get" action="/get_input">
+<form id="form1" method="get" action="/get_input" onsubmit="return validateForm()">
 <table border=1 bgcolor=#FAF0E6 width=500>
 <tr align=center><th><b>Anagram string</b><br><br></th></tr>
 <tr align=center><td><br>
-Input first string  &nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="text1" id="text1"><br>
-Input second string : <input type="text" name="text2" id="text2"><br><br>
+Input first string  &nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="text1" id="text1" onkeyup="validateForm()"><br>
+Input second string : <input type="text" name="text2" id="text2" onkeyup="validateForm()"><br><br>
 <input type="submit" name="Submit" value="Submit"><br>
+<script type="text/javascript">document.onload = ctck();</script>
 </td></tr>
 </table>
 </form>
