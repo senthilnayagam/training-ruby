@@ -7,6 +7,19 @@
 <tr align=center><th><b>Pascals Triangle</b><br><br></th></tr>
 <tr align=center><td>
 Hi
+<%
+require 'rubygems'
+require 'bundler/setup'
+require 'sinatra'
+require 'mysql'
+require '~/training-ruby/shekar/16_September/test'
+
+  obj=ABC.new%>
+Values from constructor <br>
+<%= obj.print_values() %>
+<%obj.assign_values(100,100) %>
+<br>Values from methods<br>
+<%= obj.print_values()%>
 </td></tr>
 </table>
 </form>
