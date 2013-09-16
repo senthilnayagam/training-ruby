@@ -3,7 +3,6 @@ require 'bundler/setup'
 require 'sinatra'
 require 'mysql'
 require '/home/nithya/training-ruby/nithya/13sep/dbclass'
-
 get '/hi' do
   "Hello World!"
 end
@@ -58,30 +57,4 @@ end
     erb:result
  end
  
- get '/mystyle.css' do
- "
- body
-{
-background-color:#d0e4fe;
-}
-h1
-{
-color:orange;
-text-align:center;
-}
-p
-{
-font-family:\"Times New Roman\";
-font-size:20px;
-
-}"
-
-
-end
-
-get '/home' do
-erb :time
-end
-
-
  
