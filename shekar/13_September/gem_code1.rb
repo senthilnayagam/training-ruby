@@ -3,13 +3,14 @@ require 'bundler/setup'
 require 'sinatra'
 require 'mysql'
 require '/home/chandrasekar/training-ruby/shekar/13_September/connection'
-include Enumerable
+#include Enumerable
 
 get '/hi' do
   "Hello! This is Chandra."
+  erb :sample
 end
 
-get '/result_info' do
+get '/result_info' docon.dml_select_name(rollno)
  k ="<html><head><title>University of Madras Result 2013 page</title></head><center><body><img src=\"/home/chandrasekar/Chan_Programs/mm.png\"><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><form><br><h3>University of Madras Results 2013 (PG) - MCA (PG)</h3><br><br>"
  k+="<table border=\"1\" bgcolor=\"#F0F0F0\"  size=\"1000\">"
 a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','Mark','Allied','Mark','Allied','Mark','Total','Average']  
@@ -20,7 +21,7 @@ a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','M
   qry="select * from student where rollno=" + rollno.to_s
   ds=db1.query(qry)
   ds.each do |n|
-    ar=n.join(",").to_s
+    ar=n.join(",").to_scon.dml_select_name(rollno)
   end
   if ds!="nil"
     while m <= a.length-1
@@ -31,7 +32,7 @@ a=['Rollno','Name','DOB','Major','Mark','Major','Mark','Major','Mark','Major','M
     va="<p>No such roll number exists!</p><center><br><br><a href=\'/result'\"><i>Back to home</i></a></form></body></html>"
     return va
   end
-  k+="</table><center><br><br><a href=\'/result'\"><i>Back to home</i></a></form><p><ul>
+  k+="</table><center><br><br><a href=\'/rcon.dml_select_name(rollno)esult'\"><i>Back to home</i></a></form><p><ul>
 <li>This is a computer gerenated result and hence are prone to system error.</li>
 <li>This web site may not gaureenty the precision of subject marks.</li>
 </ul></p></body></html>"
@@ -40,7 +41,7 @@ end
 
 get '/result' do
 s="<html><head><title>University of Madras Result 2013 page</title></head>
-<body bgcolor=\"#F0F0F0\"><img src=\'/home/chandrasekar/Chan_Programs/mm.png\'></img><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><center><br><h3>University of Madras Results 2013 (PG) - MCA</h3><br>
+<body bgcolor=\"#F0F0F0\"><img src=\'/hcon.dml_select_name(rollno)ome/chandrasekar/Chan_Programs/mm.png\'></img><marquee bgcolor=\"yellow\"><font color=red><b>University of Madras PG Results 2013</b></font></marquee><center><br><h3>University of Madras Results 2013 (PG) - MCA</h3><br>
 <form id=\"login\" action=\"/get_result\" method=\"get\">
 <table border=\"1\" size=\"700\ height=\"500\">
 <tr><td align=\"center\"><br><br>
