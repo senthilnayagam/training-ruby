@@ -1,0 +1,39 @@
+<html>
+<head><title>Rane Engine Valve Ltd</title></head>
+<body>
+<script type="text/javascript">
+function clear_all()
+{
+//alert("hi")
+document.getElementById('id').value = "";
+document.getElementById('name').value = "";
+document.getElementById('desig').value = "";
+document.getElementById('grade').value = "";
+document.getElementById('qcc_team').value = "";
+document.getElementById('qcc_expo').value = "";
+document.getElementById("id").focus();
+}
+</script>
+<center>
+<h3>REVL - Plant Engineering Dept</h3><br><hr><br>
+<form id="form1" method="get" action="" onsubmit="">
+<table border=1 bgcolor=#FAF0E6 width=500>
+<tr><th colspan="2"><b>Employee Data</b></th></tr>
+<tr><td>ID No </td><td><input type="text" name="id"> </td></tr>
+<tr><td>Name </td><td><input type="text" name="name"> </td></tr>
+<tr><td>Designation </td><td><input type="text" name="desig"> </td></tr>
+<tr><td>Grade </td><td><input type="text" name="grade"> </td></tr>
+<tr><td>QCC Team </td><td><input type="text" name="qcc_team"> </td></tr>
+<tr><td>QCC expo </td><td><input type="text" name="qcc_expo"> </td></tr>
+<tr><td colspan="2">
+<input id="save" type="submit" name="Save" value="Save">  
+<input id="new" type="button" name="New" value="New" onclick="clear_all()">
+<button id="delete" type="button" onclick="clear_all()">Delete</button>
+<button id="update" type="button" onclick="">Update</button>
+</td></tr>
+</table>
+</form>
+</center>
+</body>
+</html>
+
