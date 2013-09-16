@@ -55,19 +55,7 @@ end
  
  
  get '/result' do
-    "<html>
-    <head>
-    <title>result</title>
-    <body>
-    </head>
-    <center><h3>Submit ur roll number to know ur result</h3>
-    <form action=\"/your_result\" method= \"get\">
-    <center>
-    Roll_no:<input type= \"text\" name= \"roll_no\">
-    <input type=\"submit\" value= \"submit\">
-    </form>
-    </body>
-    </html>"
+    erb:result
  end
  
  get '/mystyle.css' do
