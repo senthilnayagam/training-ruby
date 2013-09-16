@@ -5,7 +5,7 @@ require 'mysql'
 require '~/training-ruby/shekar/16_September/anagram'
 
 get '/get_input' do
-   s="<html><body><form >"
+   s="<html><body><form ><br><div align=\"/center\">"
    res=0
  
    #s+="Input first string  : <input type=\"/text\" name=\"/text1\"><br>"
@@ -21,7 +21,7 @@ get '/get_input' do
    else
       s+="The strings #{s1} and #{s2} are not anagrams.<br>"
    end
-   s+="</form></body></html>"
+   s+="</div><br><br><a href=\"anagram\">Back to previous page</a></form></center></body></html>"
   return s
 end
 
