@@ -3,7 +3,6 @@ require 'bundler/setup'
 require 'sinatra'
 require 'mysql'
 require '/home/nithya/training-ruby/nithya/13sep/dbclass'
-
 get '/hi' do
   "Hello World!"
 end
@@ -55,45 +54,7 @@ end
  
  
  get '/result' do
-    "<html>
-    <head>
-    <title>result</title>
-    <body>
-    </head>
-    <center><h3>Submit ur roll number to know ur result</h3>
-    <form action=\"/your_result\" method= \"get\">
-    <center>
-    Roll_no:<input type= \"text\" name= \"roll_no\">
-    <input type=\"submit\" value= \"submit\">
-    </form>
-    </body>
-    </html>"
+    erb:result
  end
  
- get '/mystyle.css' do
- "
- body
-{
-background-color:#d0e4fe;
-}
-h1
-{
-color:orange;
-text-align:center;
-}
-p
-{
-font-family:\"Times New Roman\";
-font-size:20px;
-
-}"
-
-
-end
-
-get '/home' do
-erb :time
-end
-
-
  

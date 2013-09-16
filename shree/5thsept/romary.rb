@@ -11,5 +11,5 @@ end
 end
 end
 r=Roman.new
-r.convert(10)
+r.convert(6)
 
