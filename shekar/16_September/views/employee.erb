@@ -2,34 +2,33 @@
 <head><title>Rane Engine Valve Ltd</title></head>
 <body>
 <script type="text/javascript">
-function clear_all()
+function view()
 {
-//alert("hi")
-document.getElementById('id').value = "";
-document.getElementById('name').value = "";
-document.getElementById('desig').value = "";
-document.getElementById('grade').value = "";
-document.getElementById('qcc_team').value = "";
-document.getElementById('qcc_expo').value = "";
-document.getElementById("id").focus();
+document.getElementById('task').value="view";
+alert(document.getElementById('task').value);
 }
 </script>
 <center>
 <h3>REVL - Plant Engineering Dept</h3><br><hr><br>
-<form id="form1" method="get" action="" onsubmit="">
+<form id="form1" method="get" action="/get_data">
 <table border=1 bgcolor=#FAF0E6 width=500>
 <tr><th colspan="2"><b>Employee Data</b></th></tr>
-<tr><td>ID No </td><td><input type="text" name="id"> </td></tr>
+<tr><td>ID No </td><td><input type="text" name="id" id="id"> </td></tr>
 <tr><td>Name </td><td><input type="text" name="name"> </td></tr>
 <tr><td>Designation </td><td><input type="text" name="desig"> </td></tr>
 <tr><td>Grade </td><td><input type="text" name="grade"> </td></tr>
 <tr><td>QCC Team </td><td><input type="text" name="qcc_team"> </td></tr>
 <tr><td>QCC expo </td><td><input type="text" name="qcc_expo"> </td></tr>
-<tr><td colspan="2">
-<input id="save" type="submit" name="Save" value="Save">  
-<input id="new" type="button" name="New" value="New" onclick="clear_all()">
-<button id="delete" type="button" onclick="clear_all()">Delete</button>
-<button id="update" type="button" onclick="">Update</button>
+<tr><td colspan="2" align="center">
+
+<input type="submit" id="save"   name="Save"   value="Save" onclick="">  
+<input type="reset"  id="new"    name="New"    value="New">
+<input type="button" id="delete" name="Delete" value="Delete" onclick="">
+<input type="button" id="update" name="Update" value="Update" onclick="">
+<input type="hidden" id="task"   name="task"   value="task">
+<input type="button" id="view"   name="View"   value="View" onclick="view()">
+
+<button type="button" id="view1" onclick="view()">View1</button>
 </td></tr>
 </table>
 </form>
