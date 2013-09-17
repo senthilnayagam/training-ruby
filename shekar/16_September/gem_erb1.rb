@@ -12,6 +12,10 @@ get '/hi' do
   obj.assign_values(100,100)
   s+= "<br>Values from methods<br>"
   s+= obj.print_values()
+  s+="<br><a href=\"/hii\">link</a>"
   return s
+end
+
+get '/hii' do  
   erb :sample1
 end
