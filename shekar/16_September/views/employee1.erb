@@ -1,0 +1,56 @@
+<html>
+<head><title>Rane Engine Valve Ltd</title></head>
+<body>
+<script type="text/javascript">
+function check_clicked()
+{  
+  document.getElementById('task').value="select";
+  //alert(document.getElementById('task').value);
+  window.location="http://127.0.0.1:4567/get_data";
+}
+function check_clicked1()
+{  
+  document.getElementById('task').value="insert";
+  //alert(document.getElementById('task').value);
+}
+function check_clicked2()
+{  
+  document.getElementById('task').value="delete";
+  //alert(document.getElementById('task').value);
+}
+function check_clicked3()
+{  
+  document.getElementById('task').value="update";
+  //alert(document.getElementById('task').value);
+}
+</script>
+
+<center>
+<h3>REVL - Plant Engineering Dept</h3><br><hr><br>
+<form id="form1" method="get" action="/get_data">
+<table border=1 bgcolor=#FAF0E6 width=500>
+<tr><th colspan="2"><b>Employee Data</b></th></tr>
+<tr><td>ID No </td><td><input type="text" name="id" id="id"> </td></tr>
+<tr><td>Name </td><td><input type="text" name="name"> </td></tr>
+<tr><td>Designation </td><td><input type="text" name="desig"> </td></tr>
+<tr><td>Grade </td><td><input type="text" name="grade"> </td></tr>
+<tr><td>QCC Team </td><td><input type="text" name="qcc_team"> </td></tr>
+<tr><td>QCC expo </td><td><input type="text" name="qcc_expo"> </td></tr>
+<tr><td colspan="2" align="center">
+
+<input type="submit" id="view" name="view" value="view" onclick="check_clicked()">
+
+<input type="submit" id="insert" name="insert" value="insert" onclick="check_clicked1()">
+
+<input type="submit" id="delete" name="delete" value="delete" onclick="check_clicked2()">
+
+<input type="submit" id="update" name="update" value="update" onclick="check_clicked3()">
+
+<input type="hidden" id="task" name="task" value="task">
+
+</td></tr>
+</table>
+</form>
+</center>
+</body>
+</html>
