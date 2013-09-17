@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>
+Result
+</title>
+<h1>
+<marquee>Welcome to St.Joseph's college of science
+</marquee>
+</h1>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script>
+function goBack()
+  {
+  window.history.back()
+  }
+</script>
+<br/>
+<br/>
+<br/>
+</head>
+<body>
+<table border=1>
+		<tr>
+		  <th>rollno</th>
+		    <th>name</th>
+		    <th>Date of Birth</th>
+		    <th>subject1</th>
+		    <th>mark 1</th>
+		    <th>subject 2</th>
+	            <th>mark2</th>
+		    <th>subject3</th>
+		    <th>mark 3</th>
+		    <th>subject4</th>
+		    <th>mark 4</th>
+		    <th>subject5</th>
+		    <th>mark 5</th>
+		    <th>subject6</th>
+		    <th>mark 6</th>
+		    <th>total</th>
+	            <th>average</th>
+                    <th>University</th>
+                    <th>year</th>
+                 </tr>
+<% require 'mysql' %>
+
+
+
+<%= con = Mysql.new 'localhost', 'root', 'root', 'test1' %>
+<% result=' ' %>
+<% qry="SELECT * FROM student where rollno= 2;" %>
+<% rs = con.query(qry) %>
+<% rs.each do |row| %>
+<tr><td>
+<%= result +=  row.join("</td><td>") %>
+</td></tr></table><br/><br/></br>
+<% end %>
+<center><input type="button" value="Back" onclick="goBack()" ></center>
+
+</body>
+</html>
+
