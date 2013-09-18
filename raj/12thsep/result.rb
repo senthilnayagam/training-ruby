@@ -90,19 +90,22 @@ end
 
 get '/result' do
 str= "<html><head>
+<link rel=\"stylesheet\" type=\"text/css\" href=\"/style1.css\">
+</head>
 <style>
-  	#header {
-	    margin-top:0px;
-	    height:80px;
-	    background:#D3D3D3;
-	    margin-bottom:50px;
-  	}
-	#footer {
-	    height: 30px;
-	    background:white;
-	    position: absolute;
-            margin-bottom: 0;
-  	}
+  		#header {
+		    margin-top:0px;
+		    height:80px;
+		    background:#D3D3D3;
+		    margin-bottom:50px;
+  		}
+		#footer {
+		    height: 30px;
+		    background:#708090;
+		    position: absolute;
+                    margin-bottom: 0;
+  		}
+		
 </style></head>
 
 <body bgcolor=\"#2F4F4F\" align=\"center\"> 
@@ -112,9 +115,9 @@ str= "<html><head>
 </div>
 
 <marquee style=\"color:#DCDCDC;background-color:#D2691E\">B.E and B.Tech Results are Out. Check your Result here...</marquee>
-<h3 align=\"center\">HALLTICKET NO<h3>
+<h3 align=\"center\" style=\"color:#DCDCDC\">HALLTICKET NO<h3>
 
-<form action=\"/rollnum\" name=\"result\">
+<form action=\"/rollnum\" name=\"result\">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <input type=\"text\" align=\"center\" name=\"rollno\">
 <input type=\"submit\" value=\"Result\">
 </form>
