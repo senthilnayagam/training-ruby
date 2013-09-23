@@ -9,7 +9,7 @@ puts "\nSearch for nodes by css : "
 doc.css('h3.r a').each do |link|
   print link.content + "-"
 end
-
+=begin
 # Search for nodes by xpath
 puts "\nSearch for nodes by xpath : "
 doc.xpath('//h3/a').each do |link|
@@ -21,3 +21,4 @@ puts "\nSearch for nodes by possible match : "
 doc.search('h3.r a.l', '//h3/a').each do |link|
   print link.content + "-"
 end
+=end
